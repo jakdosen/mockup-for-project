@@ -20,7 +20,7 @@
         className: "",
         template :_.template($('#project-tpl').html()),
         events: {
-            "click span.gear": "operate",
+            "click .gear": "operate",
             "change select": "change"
         },
         initialize: function () {
