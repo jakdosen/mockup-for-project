@@ -5,8 +5,8 @@
  */
 ;define(function(require, exports, module){
 
-    require("./load-css");
+    require("./../load-css");
 
-    require("./popup-window");
+
 
 });
