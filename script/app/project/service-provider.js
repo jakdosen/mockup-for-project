@@ -37,12 +37,14 @@
         change:function (e) {   // button operate
             var changeVal = e.target.value;
             if(!changeVal) return;
-            parseInt(changeVal) === 0 ? popup.open(this.model.toJSON(), 0, 1) : popup.open(this.model.toJSON, 1, 1) ;
+            parseInt(changeVal) === 0 ? popup.open(this.model.toJSON(), 0, 1) : popup.open(this.model.toJSON(), 1, 1) ;
         }
     });
 
     var AppView = Backbone.View.extend({
         initialize : function(renderTarget){
+            ev.bind("Service.Add", this.getData,this);
+            ev.bind("Service.Update", this.getData,this);
             this.renderTarget = renderTarget;
             this.collection = new ItemList();
             this.collection.bind("add", this.renderOne, this);
