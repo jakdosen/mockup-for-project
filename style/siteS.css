@@ -1,0 +1,81 @@
+
+
+/* SP Customizable CSS START */
+
+/* Login CSS Start */
+
+.nsh-custom-rightBox-gradientBg {
+	background: #3B5998;
+	color:#fff;
+}
+a.com-menu-selected{
+	color:#273691 !important;
+}
+/* Login CSS End */
+
+/* Header CSS START */
+
+/*Header Background*/
+.sp-head-top{	
+	background-color: #fff; /*Header Background*/
+	color:#333; /*Header Text*/
+}
+
+.sp-head-menu{
+	background:#fff; /*Menu Background*/
+}
+ul.com-menu-ul a{
+	color: #666; /*Menu Text*/
+}
+.sp-menuHover-ph{
+	color: #273691; /*Menu Hover Text - Only used to grab for Javascript*/
+}
+.sp-profileLink{
+	color:#666;
+}
+.sp-profileLink:hover{
+	color:#003896;
+}
+ul.com-menu-ul a:hover, .ul.com-menu-ul a:active, .ul.com-menu-ul a:focus{
+	color: #273691; /*Menu Hover Text*/
+}
+ul.com-menu-ul-ul > li{
+	background:#EFF5F9; /*Menu Drop Down Background*/
+}
+
+ul.com-menu-ul-ul > li a{
+	color:#666; /*Menu Drop Down Link Colors*/
+}
+
+.sp-menuDdHover-ph{
+	background:#C2EDF3; /* Menu Drop Down Hover Background - Only used for JS grab*/
+	color:#273691;/* Menu Drop Down Text Hover Color - Only used for JS grab*/
+}
+
+ul.com-menu-ul-ul > li:hover{
+	background:#C2EDF3; /*Menu Drop Down Hover Background*/
+}
+
+ul.com-menu-ul-ul > li a:hover{
+	color:#273691; /*Menu Drop Down Text Hover Color*/
+}
+
+
+/* Header CSS END */
+
+/* Login CSS START */
+.nsh-service-rightbox {
+	background-color: #3B5998;
+}
+/*.nsh-custom-rightBox-gradientBg{
+	background: -moz-linear-gradient(top, #3B5998 0%, #3B5998 100%);
+}*/
+
+/* Content CSS START */
+
+
+/* Content CSS END */
+
+
+/* SP Customizable CSS END */
+

@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gavin's Mockup</title>
+    <link rel="stylesheet" type="text/css" href="style/site.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/siteS.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/uil71/ui.all.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/base.css" media="screen"/>
+    <style type="text/css">
+        .round-num{
+            border: 1px solid #ccc;
+            color: #666;
+            border-radius: 10px;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            line-height: 20px;
+            top: 5px;
+            right: 35px;
+            z-index: 10000;
+            text-align: center;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .round-num:hover{
+            background: #ccc;
+            color: #fff;
+        }
+    </style>
+</head>
+<body style="overflow: hidden">
+<div id="nsh-content">
+    <div class="sp-head" style="height: 84px">
+        <div class="sp-head-top">
+            <div class="sp-head-top-central">
+                <div class="sp-head-client-logo">
+                    <a>
+                        <img id="headImgDom" class="sp-custom-headerLogoImg"
+                             src="https://s3.amazonaws.com/spd.noosh.com/noosh/v1/sp/5000000/head?rand=-1020965838">
+                    </a>
+                </div>
+                <div class="sp-head-top-center-user">
+                    <!-- User Admin Menu Area -->
+
+                    <a>
+                        <img id="headProfileImage" class="sp-head-top-userprofile-picture"
+                             src="https://s3.amazonaws.com/spd.noosh.com/noosh/v1/person/5342936/profile?rand=1106969625">
+                    </a>
+            <span class="sp-head-greeting">
+            	<span class="sp-profileLink" id="profileTitleUserName">li Weirong</span>
+           	</span>
+
+                    <div class="sp-header-simple-button-wrapper" style="margin-left:100px;">
+                        <div class="sp-header-simple-logout">
+                            Logout
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sp-head-menu">
+        <div class="glb-head-menu-center clearfix">
+
+            <ul class="com-menu-ul">
+                <li class="com-menu-ul-li_has_sub_menu ">
+                    <div class="clearfix">
+                        <a npr="1">
+                            <div id="glbDashboard">Home</div>
+                        </a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <li class="com-menu-ul-li_has_sub_menu ">
+                    <div class="clearfix">
+                        <a npr="1">
+                            <div id="glbProjects">Projects</div>
+                        </a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <li>
+                    <a npr="1">
+                        <div id="glbUsersDropdown">Teams</div>
+                    </a>
+                </li>
+
+                <li class="com-menu-ul-li_has_sub_menu ">
+                    <div class="clearfix">
+                        <a npr="1">
+                            <div id="glbSites">Sites</div>
+                        </a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+
+                <li class="com-menu-selected">
+                    <a class="com-menu-selected" npr="1">
+                        <div id="glbSpecs">Specs</div>
+                    </a>
+                </li>
+                <li>
+                    <a npr="1">
+                        <div id="glbReports">Reports</div>
+                    </a>
+
+                </li>
+                <li class="com-menu-ul-li_has_sub_menu">
+                    <div class="clearfix">
+                        <a>Admin</a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <div class="invite-coworkers-box-global" id="invite-coworkersExpand">
+                    <div id="invite-coworkers-container">
+
+                        <div style="clear:both;"></div>
+
+                    </div>
+                </div>
+
+            </ul>
+            <!-- Start Right Hand Side Menu -->
+            <div class="home-menu" style="float:right;margin-top:6px;margin-right:-5px;">
+                <a class="invite-global-trigger" style="color:#fff;">
+                    <div class="sp-simple-button" id="glbTopInviteButton" style="float:left;">Invite</div>
+                </a>
+                <a class="create-page-link2">
+                    <div class="sp-simple-button" id="glbTopCreateSite" style="float:left;">Create Site</div>
+                </a>
+                <a class="create-project-link" style="">
+                    <div class="sp-simple-button" id="glbTopCreateProject" style="float:left;">Create Project</div>
+                </a>
+            </div>
+            <div class="sp-menuHover-ph"></div>
+            <div class="sp-menuDdHover-ph"></div>
+
+        </div>
+    </div>
+
+    <div class="sp-header-liner"></div>
+
+</div>
+<div class="glb-body">
+
+    <div class="glb-body-central clearfix">
+        <div class="glb-body-central-main">
+            <div class="glb-body-central-main">
+                <div id="myContent">
+                    <div id="spSpecTab" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
+                                    >Products and Services Management</a></li>
+                        </ul>
+
+                        <div id="sp-specManager" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <div class="sp-specManageArea">
+                                <div class="sp-specs-inputArea">
+                                    <div>
+                                        <h2 class="sp-specText">Products and Services Management</h2>
+                                    </div>
+                                    <div>
+                                        List of available products and services.
+                                    </div>
+                                    <div class="sp-button-wrapperSpec-createNew">
+                                        <div id="sp-create-newSpec">
+                                            <div id="advancedEditor" class="sp-simple-button"
+                                                 style="float: right; margin-left: 10px;">
+                                                <span>
+                                                    <img style="margin-top:6px;"
+                                                         src="style/images/icons/small_plus.png">
+                                                   Advanced Product Editor
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="specsTableContainer">
+                                        <table id="serviceSpecsTable" class="sp-specManage-table">
+                                            <thead>
+                                            <tr>
+                                                <th>Products and Services</th>
+                                                <th>Edit</th>
+                                                <th>Assigned Sites</th>
+                                            </tr>
+                                            </thead>
+
+                                            <tbody>
+
+
+                                            <tr>
+                                                <td class="default-system-products" id="SpecNameUpdate5000002">Poster
+                                                </td>
+                                                <td>
+                                                    <div class="customize-spec" pid="5000002" defaultproduct="1"
+                                                         style="float: left; display: block;">
+                                                        customize
+                                                    </div>
+                                                    <a class="export-one-spec sideProgress-link">export</a>
+                                                </td>
+                                                <td>
+                                                    <div class="view-spec-sites tip-Ready" pid="5000002"
+                                                         title="This feature is coming soon....">
+                                                        view sites
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td id="SpecNameUpdate5001603">Coffee and Tea Selection</td>
+                                                <td>
+                                                    <div class="customize-spec" pid="5001603" style="float:left;">
+                                                        customize
+                                                    </div>
+                                                    <a class="export-one-spec sideProgress-link">export</a>
+                                                </td>
+                                                <td>
+                                                    <div class="view-spec-sites tip-Ready" pid="5001603"
+                                                         title="This feature is coming soon....">
+                                                        view sites
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                            <div style="clear:both;height:5px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="glb-body-central-side_bar">
+            <ul>
+                <li>
+                    <div class="sp-title">
+                        <a class="tip-Ready"
+                           oldtitle="Track your current site progression and what you still have to set up." title="">Site
+                            Progress</a>
+                    </div>
+                    <div class="glb-body-central-side_bar-section-content">
+                        <div class="progress_bg">
+                            <div class="progress_bar_wrapper">
+                                <div class="progress_left_cap"></div>
+                                <div class="progress_bar_percentWrapper">
+                                    <div class="progress_right_bar_100" id="progressRightBar" style="width:40%;">
+                                        <div class="progress_text" style="color:#FFFFFF">40%</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul style="opacity:1;cursor:default;" class="site-progress-div-zindex">
+
+                            <li><img src="style/images/icons/checkmark.png" style="visibility:visible"
+                                     id="siteProgress3Img">
+                                <a class="one-new-job tip-Info sideProgress-link" tid="rightPanel3Text"
+                                   id="rightPanel3Text" npr="1">Customize
+                                    Customer Site</a></li>
+
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div id="productEditorPopup" class="pop-window ui-dialog-content ui-widget-content"
+     style="display: block; width: auto; min-height: 0px; height: 549px;" scrolltop="0" scrollleft="0">
+    <div id="peTemplates" class="pop-window" style="display: none;">
+
+    </div>
+
+    <div id="peMainTabs" class="pop-window ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: block;">
+        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <li class="ui-state-default ui-corner-top"><a href="#peBasicInfo">Basic Information</a></li>
+            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#peCustomization">Customization</a>
+            </li>
+        </ul>
+        <div id="peBasicInfo" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+            <form id="peBasicInfoForm">
+                <fieldset>
+                    <dl class="pop-tab-dl">
+                        <dt>Name:</dt>
+                        <dd><input id="peFormNameInput" type="text" name="name"></dd>
+                    </dl>
+                    <dl class="pop-tab-dl" id="peFormCategoriesDl">
+                        <dt>Product Category:</dt>
+                        <dd>
+                            <input id="peFormCategories" name="productCategories" style="display: none;">
+                            <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+                                <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
+                                                             autocomplete="off" role="textbox" aria-autocomplete="list"
+                                                             aria-haspopup="true"></li>
+                            </ul>
+                            <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+                                <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
+                                                             autocomplete="off" role="textbox" aria-autocomplete="list"
+                                                             aria-haspopup="true"></li>
+                            </ul>
+                            <div id="peFormCategoriesMenuContainer" class="tagit-menu-container">
+                                <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"
+                                    role="listbox" aria-activedescendant="ui-active-menuitem"
+                                    style="z-index: 1035; top: 0px; left: 0px; display: none;"></ul>
+                            </div>
+                        </dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>Description:</dt>
+                        <dd><textarea id="peFormDescInput" cols="30" rows="4" name="desc"></textarea></dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>Icon:</dt>
+                        <dd>
+                            <img id="peFormIconPreview" class="scroll-list-img"
+                                 src="style/images/product_icon_1.png"><br>
+                        </dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>&nbsp;</dt>
+                        <dd>
+                            <div id="peFormIconContainer">
+                                <form name="awspeFormIconInput" id="awsFormpeFormIconInput"
+                                      action="https://s3.amazonaws.com/spd.noosh.com/" method="post"
+                                      enctype="multipart/form-data" accept-charset="UTF-8"><input type="hidden"
+                                                                                                  name="key"
+                                                                                                  value=""><input
+                                        type="hidden" name="AWSAccessKeyId" value="AKIAI36RVYOQNINFPJUA"><input
+                                        type="hidden" name="acl" value="public-read"><input type="hidden"
+                                                                                            name="success_action_redirect"
+                                                                                            value="https://noosh.com"><input
+                                        type="hidden" name="policy" value=""><input type="hidden" name="signature"
+                                                                                    value=""><input type="hidden"
+                                                                                                    name="Content-Type"
+                                                                                                    value=""><input
+                                        type="file" name="file" loaded="w" id="peFormIconInput"
+                                        class="big-file-area"><img style="display:none;"
+                                                                   src="https://s3.amazonaws.com/icons.noosh.com/loading.gif">
+                                </form>
+                            </div>
+                        </dd>
+                    </dl>
+                </fieldset>
+            </form>
+        </div>
+        <div id="peCustomization" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+            <div class="pop-product-customization-dd">
+                <div class="pop-pe-customization-dd-tabs">
+                    <div id="peCustomizationTabs" status="init"
+                         class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-sortable">
+                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                            <li domid="test" class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
+                                    href="#22vAeL2C"><input class="com-form-editor-tab-title-box" value="New Tab"
+                                                            type="text"><span class="com-form-editor-tab-title-text">New Tab</span></a>
+
+                                <div class="ui-icon ui-icon-edit pe-tab-edit"></div>
+                            </li>
+                            <li class="com-form-editor-addTab-li ui-state-default ui-corner-top">
+                                <a href="#peCustomizationSum">
+                                    <div class="ui-icon ui-icon-plus" id="peAddProductTab"></div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div id="22vAeL2C" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                            <ul id="22vAeL2CTable" class="pe-dd-rows ui-sortable">
+                                <li class="pe-dd-row" id="40bHGOJP" style="width:950px;">
+                                    <ul id="5TSIxyPz" class="pe-dd-cells clearfix ui-sortable">
+                                        <li id="R4txlsyP" class="pe-dd-cell ui-droppable"
+                                            style="width: 890px; height: auto;"><p
+                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                            <div id="f5De53Fl"
+                                                 class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
+                                                 style="z-index:5001;background-color:white;" type="text">
+                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-edit"
+                                                                                                          value="New Textbox"><span
+                                                        class="pe-dd-cellCard-label"
+                                                        style="color:black;font-weight:normal;">New Textbox</span><span
+                                                        class="pe-dd-cellCard-required"><span></span></span></div>
+                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                          style="width:120px;"
+                                                                                                          value=""><span
+                                                        class="pe-dd-cellCard-valueShown"></span></div>
+                                            </div>
+                                            <div id="zMtfnTev"
+                                                 class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
+                                                 style="z-index:5002;background-color:white;" type="textarea">
+                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-edit"
+                                                                                                          value="New Textarea"><span
+                                                        class="pe-dd-cellCard-label"
+                                                        style="color:black;font-weight:normal;">New Textarea</span><span
+                                                        class="pe-dd-cellCard-required"><span></span></span></div>
+                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><textarea
+                                                        class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit" cols="60"
+                                                        rows="6"></textarea><span
+                                                        class="pe-dd-cellCard-valueShown"></span></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pe-dd-row" id="TOPRWp8N" style="width:950px;">
+                                    <ul id="adOZlzOJ" class="pe-dd-cells clearfix ui-sortable">
+                                        <li id="prLt8p3T" class="pe-dd-cell ui-droppable"
+                                            style="width: 890px; height: 41px;"><p
+                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                            <div id="dn6DyTmi" class="pe-dd-cellCard clearfix"
+                                                 style="z-index:5003;background-color:white;" type="number">
+                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-edit"
+                                                                                                          value="New Number"><span
+                                                        class="pe-dd-cellCard-label"
+                                                        style="color:black;font-weight:normal;">New Number</span><span
+                                                        class="pe-dd-cellCard-required"><span></span></span></div>
+                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                          size="15"
+                                                                                                          value=""><span
+                                                        class="pe-dd-cellCard-valueShown"></span></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pe-dd-row" id="uf1skQax" style="width:950px;">
+
+                                    <ul id="8yENBwSs" class="pe-dd-cells clearfix ui-sortable">
+                                        <li id="ExZqJ6pn" class="pe-dd-cell ui-droppable"
+                                            style="width: 890px; height: 41px;"><p
+                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                            <div id="XEJzZXbS" class="pe-dd-cellCard clearfix"
+                                                 style="z-index:5004;background-color:white;" type="decimal">
+                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-edit"
+                                                                                                          value="New Decimal"><span
+                                                        class="pe-dd-cellCard-label"
+                                                        style="color:black;font-weight:normal;">New Decimal</span><span
+                                                        class="pe-dd-cellCard-required"><span></span></span></div>
+                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                          size="15"
+                                                                                                          value=""><span
+                                                        class="pe-dd-cellCard-valueShown"></span></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="pe-dd-row pe-dd-row-noSort" id="Q2w4uTxw" style="width:950px;">
+
+                                    <ul id="LTCUiW4d" class="pe-dd-cells clearfix ui-sortable">
+                                        <li id="VCiBAOPe" class="pe-dd-cell ui-droppable" style="width:890px;"><p
+                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                                style="display:none;float:right;margin-top:5px;margin-right:5px;"></p>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="peCustomizationSum"
+                             class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                            Please click the plug sign to add new tab. Then double click the tab name to edit it.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pop-product-customization-dd-fields">
+                    Drag these fields and drop them in the tab area
+                    <ul id="peCards" class="pop-product-customization-dd-fields-ul">
+                        <li class="com-draggable-element ui-draggable" form="label">Section Heading</li>
+                        <li class="com-draggable-element ui-draggable" form="text">Textbox</li>
+                        <li class="com-draggable-element ui-draggable" form="textarea">Text Area</li>
+                        <li class="com-draggable-element ui-draggable" form="number">Number</li>
+                        <li class="com-draggable-element ui-draggable" form="decimal">Decimal</li>
+                        <li class="com-draggable-element ui-draggable" form="date">Date</li>
+                        <li class="com-draggable-element ui-draggable" form="select">Dropdown</li>
+                        <li class="com-draggable-element ui-draggable" form="radiobuttons">Radio Buttons</li>
+                        <li class="com-draggable-element ui-draggable" form="checkboxes">Checkboxes</li>
+                        <li class="com-draggable-element ui-draggable" form="quantities">Quantities</li>
+                        <li class="com-draggable-element ui-draggable" form="dimensions">Dimensions</li>
+                        <li class="com-draggable-element ui-draggable" form="image">Image</li>
+                        <li class="com-draggable-element ui-draggable" form="html">Html Text</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div style="clear:both;"></div>
+    </div>
+</div>
+<div id="productEditorCellAttr" class="pop-window">
+
+    <dl class="pop-tab-dl" id="howToPlaceCards" style="display: none">
+        <dt>How to place fields:</dt>
+        <dd><input type="radio" class="pe-attr-cards-placement" name="fieldsPosition" value="absolute" celldomid="">Overlapped<br>
+            <input type="radio" class="pe-attr-cards-placement" name="fieldsPosition" value="relative" celldomid="">Tiled
+        </dd>
+    </dl>
+    <div id="cellCardsTabs">
+        <form id="IguSMinLForm">
+            <fieldset>
+
+                <dl class="pop-tab-dl">
+                    <dt>Label Position:</dt>
+                    <dd>
+                        <select class="pe-tab-label-position" id="22vAeL2CTableTabLabelPosition">
+                            <option value="top">top</option>
+                            <option selected="" value="left">left</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Number of columns:</dt>
+                    <dd>
+                        <select class="pe-tab-cells-per-row" id="22vAeL2CTableTabCellsPerRow">
+                            <option value="1">one</option>
+                            <option value="2" selected="">two</option>
+                            <option value="3">three</option>
+                            <option value="4">four</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Tab Name</dt>
+                    <dd><input type="text" name="name" value="New Tab"></dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Do not show in client view</dt>
+                    <dd><input type="checkbox" name="isHidden"></dd>
+                </dl>
+                <dl class="pop-tab-dl" style="display:none;">
+                    <dt>Do not show in supplier view</dt>
+                    <dd><input type="checkbox" name="isHiddenSplr"></dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Show when</dt>
+                    <dd>
+                        <div>Always show</div>
+                        <ul class="pe-attr-conditions-ul"></ul>
+                        <a class="pe-attr-addCondition" cellcardid="">add condition</a>
+                    </dd>
+                </dl>
+            </fieldset>
+        </form>
+    </div>
+
+
+    <div id="currentCellCardsSelectContainer" style="display:none;padding: 20px;margin:20px 0 20px 20px;">
+        <select id="currentCellCardsSelect" style="float:left;">
+        </select>
+
+        <button type="button" id="showThisCellCard" style="float: left;margin-left: 20px;">Show</button>
+    </div>
+
+    <div id="cellCardConfigContainer">
+    </div>
+</div>
+
+
+
+<script src="script/seajs/sea-debug.js"
+        data-config="app/config.js"
+        data-main="app/main.js"></script>
+</body>
+</html>
