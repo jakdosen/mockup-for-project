@@ -5876,10 +5876,8 @@ ul.uploaded-files a:hover{
 
 .sp-specManageArea{
 	 position: relative;
-     width: 720px;
      border:none;
      margin-left:0px;
-	 min-height:340px;
 }
 .sp-specs-inputArea{
 	margin-top:10px;
@@ -5896,7 +5894,8 @@ ul.uploaded-files a:hover{
 	margin-top:10px;
 	margin-bottom:60px;
 	font-size:10px;
-	width:720px;
+	width:80%;
+    margin-left: 10%;
 	padding:0px;
 }
 .sp-specManage-table thead{
@@ -5919,27 +5918,15 @@ ul.uploaded-files a:hover{
 	font-size:12px;
 	font-weight:bold;
 	height:32px;
-	width:400px;
 }
-.sp-specManage-table th + th{
-	width:150px;
-}
-.sp-specManage-table th + th + th{
-	width:150px;
-	display:none;
-}
+
 .sp-specManage-table td{
 	height:30px;
 	font-size:12px;
 	max-width:400px;
 	word-wrap:break-word;
 }
-.sp-specManage-table td + td{
-	text-align:center;
-}
-.sp-specManage-table td + td + td{
-	display:none;
-}
+
 .sp-button-wrapperSpec-createNew{
 	height:30px;
 	margin-top:-40px;
