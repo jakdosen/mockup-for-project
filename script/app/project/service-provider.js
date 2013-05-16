@@ -18,7 +18,7 @@
     var ItemView = Backbone.View.extend({
         tagName: "tr",
         className: "",
-        template :_.template($('#provider-tpl').html()),
+        template :_.template($('#project-tpl').html()),
         events: {
             "click .gear": "operate",
             "change select": "change"

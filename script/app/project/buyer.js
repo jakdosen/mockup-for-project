@@ -41,8 +41,11 @@
             this.model.bind("change",this.render,this);
         },
         dropDown : function(e){
-            this.$("span.gear").hide();
-            this.$("select").show();
+            var target = $(e.target);
+            if(target.hasClass("gear")){
+                target.hide();
+                this.$("select").show();
+            }
         },
         selectOpt : function(e){
             var opt = $(e.target).val();
@@ -81,12 +84,7 @@
             this.collection.add(item);
         },
         update : function(item){
-            this.collection.each(function(it){
-                if(it.get("id") === item.id){
-                    it.reset(item);
-                    return;
-                }
-            });
+            this.collection.reset(data.data);
         }
 
     });
