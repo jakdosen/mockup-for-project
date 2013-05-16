@@ -31,8 +31,10 @@
             model.set("status",MP.data.status[1*(model.get("status"))]);
             this.$el.html(this.template(this.model.toJSON()));
         },
-        operate:function () {   // button operate
-            this.$(".gear").hide().next("select").show();
+        operate:function (e) {   // button operate
+            if(e.target.className === "gear"){
+                this.$(".gear").hide().next("select").show();
+            }
         },
         change:function (e) {   // button operate
             var changeVal = e.target.value;
