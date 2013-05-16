@@ -54,9 +54,12 @@
                             completionDate:completionDateIpt.val(),
                             desc:descIpt.val()
                         });
-                        model.type == 0&&(addData.id=id++);
 
-                        data.push(addData);
+                        model.type == 0?
+                            (addData.id=id++,data.push(addData)):
+                            _.find(data,function(v,k){if(v.id ==addData.id ){data.split(k,1,addData)}})
+
+
                         var cp =ownerTypeArr.slice(0);
                         cp.push("");
                         //make 'Buyer.Create Service.Create'
@@ -91,9 +94,9 @@
                             completionDate:completionDateIpt.val(),
                             desc:descIpt.val()
                         });
-                        model.type == 0&&(addData.id=id++);
-
-                        data.push(addData);
+                        model.type == 0?
+                            (addData.id=id++,data.push(addData)):
+                            _.find(data,function(v,k){if(v.id ==addData.id ){data.split(k,1,addData)}})
                         ev.trigger(actionKey,addData);
                         console.log(actionKey);
                         $( this ).dialog( "close" );
