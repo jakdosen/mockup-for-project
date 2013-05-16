@@ -1,7 +1,7 @@
 /**
  * User: Gavin.Li
  * Date: 5/15/13
- * Module: main
+ * Module: editor/main
  */
 ;define(function(require, exports, module){
 

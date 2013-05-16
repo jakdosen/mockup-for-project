@@ -56,6 +56,8 @@ seajs.config({
         'jsrender':{
             src: 'lib/jsrender/jsrender-1.0',
             deps: ['jquery']
-        }
+        },
+        'backbone':'lib/backbone/backbone-1.0.0',
+        'underscore':'lib/underscore/underscore-1.4.4'
     }
 });
