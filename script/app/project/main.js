@@ -6,7 +6,9 @@
 ;define(function(require, exports, module){
 
     require("./../load-css");
-    var Backbone = require("backbone");
+
+    require("./buyer");
+    require("./service-provider");
 
 
 
