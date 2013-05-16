@@ -110,6 +110,7 @@
     <div class="sp-header-liner"></div>
 
 </div>
+<!--Service Provider Project List-->
 <div class="ui-tabs ui-widget ui-widget-content ui-corner-all" style="width: 90%;margin-left: 5%;">
     <div class="ui-tabs-panel ui-widget-content ui-corner-bottom">
     <div class="sp-specManageArea">
@@ -152,7 +153,7 @@
 </div>
 </div>
 
-
+<!--Buyer Project List-->
 <div class="ui-tabs ui-widget ui-widget-content ui-corner-all" style="width: 90%;margin-left: 5%;">
     <div class="ui-tabs-panel ui-widget-content ui-corner-bottom">
         <div class="sp-specManageArea">
@@ -194,6 +195,38 @@
         <div style="clear:both;height:5px;"></div>
     </div>
 </div>
+
+<script id="popup-tpl" type="text/template">
+    <div id="cellCardsTabs">
+            <fieldset>
+                <dl class="pop-tab-dl">
+                    <dt>Project Name*:</dt>
+                    <dd>
+                        <input name="name" value="<%obj.name&&print(name)%>" style="width:280px"/>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Project Owner:</dt>
+                    <dd>
+                        <input name="owner" value="<%obj.owner&&print(owner)%>"/>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Completion Date:</dt>
+                    <dd>
+                        <input type="text" name="completionDate" value="<%obj.completionDate&&print(completionDate)%>"/>
+                        <img class="ui-datepicker-trigger" src="style/images/icons/calendar.png"/>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Description:</dt>
+                    <dd>
+                        <textarea name="desc"><%obj.desc&&print(desc)%></textarea>
+                    </dd>
+                </dl>
+            </fieldset>
+    </div>
+</script>
 <script src="script/seajs/sea-debug.js"
         data-config="app/config.js"
         data-main="app/project/main.js"></script>
