@@ -154,15 +154,13 @@ background-color: #868686;
 color:#FFFFFF; font-weight:bold; 
 font-size:14px; 
 float:right; 
-margin: .5em 0 .5em 0; 
+margin: .5em 0 .5em 1em;
 cursor: pointer; 
 padding: 9px 28px; 
 line-height: 1.4em; 
 width:auto; 
 overflow:visible; 
 font-family:helvetica,arial,sans-serif;
-border: 0px; 
-border-radius:0 0 0 0;
 }
 .ui-dialog .ui-resizable-se { width: 20px; height: 20px; right: 3px; bottom: 3px; }
 .ui-draggable .ui-dialog-titlebar { cursor: move; }
