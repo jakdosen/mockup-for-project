@@ -26,7 +26,7 @@
     var ItemView = Backbone.View.extend({
         tagName: "tr",
         className: "",
-        template :_.template($('#buyer-tpl').html()),
+        template :_.template($('#project-tpl').html()),
         events : {
             "click .gear" : "dropDown",
             "change select" : "selectOpt"
@@ -41,8 +41,8 @@
             this.model.bind("change",this.render,this);
         },
         dropDown : function(e){
-            $(e.target).hide();
-            this.$el.find("select").show();
+            this.$("span.gear").hide();
+            this.$("select").show();
         },
         selectOpt : function(e){
             var opt = $(e.target).val();
