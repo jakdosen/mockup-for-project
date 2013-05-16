@@ -62,9 +62,9 @@
 
                         var cp =ownerTypeArr.slice(0);
                         cp.push("");
-                        //make 'Buyer.Create Service.Create'
-                        ev.trigger(cp.join("."+buttonTextArr[0]+" "),addData);
-                        console.log(cp.join("."+buttonTextArr[0]+" "));
+                        //make 'Buyer.Add Service.Add'
+                        ev.trigger(cp.join("."+optTypeArr[model.type]+" "),addData);
+                        console.log(cp.join("."+optTypeArr[model.type]+" "));
                         $( this ).dialog( "close" );
                     }
                 },
