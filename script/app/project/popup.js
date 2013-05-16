@@ -45,7 +45,7 @@
                             nameIpt = $( this).find("[name='name']"),
                             completionDateIpt = $( this).find("[name='completionDate']"),
                             descIpt = $( this).find("[name='desc']"),
-                            ownerIpt = $( this).find("[name='ownerIpt']");
+                            ownerIpt = $( this).find("[name='owner']");
                         if(!nameIpt.val()) return
                         var addData = _.extend({},dataModel,model,{
                             name:nameIpt.val(),

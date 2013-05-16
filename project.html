@@ -128,19 +128,11 @@
                             <th>Completion Date</th>
                             <th>Creation Date</th>
                             <th>Recent Activity</th>
-                            <th></th>
+                            <th style="width: 100px"></th>
                         </tr>
                     </thead>
                     <tbody id="specsTableContainerTbody">
-                    <tr style="text-align: center">
-                        <td>Poster</td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+
                     </tbody>
                 </table>
             </div>
@@ -171,19 +163,11 @@
                             <th>Completion Date</th>
                             <th>Creation Date</th>
                             <th>Recent Activity</th>
-                            <th></th>
+                            <th style="width: 100px"></th>
                         </tr>
                         </thead>
                         <tbody id="buyer-sp">
-                        <tr style="text-align: center">
-                            <td>Poster</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
+
                         </tbody>
                     </table>
                 </div>
@@ -231,31 +215,15 @@
         data-config="app/config.js"
         data-main="app/project/main.js"></script>
 
-<script id="provider-tpl" type="text/template">
+<script id="project-tpl" type="text/template">
     <td><%=name%></td>
     <td><%=owner%></td>
     <td><%=status%></td>
     <td><%=completionDate%></td>
     <td><%=CreationDate%></td>
     <td><%=recent%></td>
-    <td><span class="gear">gear</span>
-        <select style="display:none">
-            <option value="">Please Select</option>
-            <option value="0">Copy</option>
-            <option value="1">Edit</option>
-        </select>
-    </td>
-</script>
-
-<script id="buyer-tpl" type="text/template">
-    <td><%=name%></td>
-    <td><%=owner%></td>
-    <td><%=status%></td>
-    <td><%=completionDate%></td>
-    <td><%=CreationDate%></td>
-    <td><%=recent%></td>
-    <td><span class="gear">gear</span>
-        <select style="display:none">
+    <td><span class="gear" style="cursor:pointer;background:blue">gear</span>
+        <select style="display:none;width:90px">
             <option value="">Select...</option>
             <option value="0">Copy</option>
             <option value="1">Edit</option>
