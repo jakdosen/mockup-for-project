@@ -13,6 +13,7 @@
         Backbone = require("backbone");
 
     window.MP = MP;
+    MP.data = require("./data");
     /**
      * MP event center
      * It is used to subscribe module event and  publish event cross module.

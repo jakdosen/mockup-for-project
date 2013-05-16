@@ -6,20 +6,19 @@
 ;define(function(require, exports, module){
     var $ = require("jquery"),
         _ = require("underscore"),
-        ev = PM.event,
+        ev = window.MP.event,
         Backbone = require("backbone");
     require("jquery.ui");
     require("jsrender");
-
     var itemView = Backbone.View.extend({
         tagName:"div",
         events:{
 
         },
-        template:_.template($("#productEditorCellAttr").html()),
+        template:_.template($("#popup-tpl").html()),
         render:function(){
             this.$el.html(this.template(this.model.toJSON()));
-            this.$el..dialog({
+            this.$el.dialog({
                 resizable: false,
                 height:140,
                 modal: true,
@@ -40,7 +39,14 @@
     });
 
     return{
-        open:function(data,type){
+        /**
+         * open
+         * @param data
+         * @param type 0:copy 1:editor
+         * @param owner 0:buyer 1:service
+         */
+        open:function(data,type,owner){
+            data = data||{};
             new itemView({model:new Backbone.Model(data)});
         }
     }
