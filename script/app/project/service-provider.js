@@ -32,7 +32,7 @@
             this.$el.html(this.template(this.model.toJSON()));
         },
         operate:function (e) {   // button operate
-            if(e.target.className === "gear"){
+            if(this.$(e.target).hasClass("gear")){
                 this.$(".gear").hide().next("select").show();
             }
         },
