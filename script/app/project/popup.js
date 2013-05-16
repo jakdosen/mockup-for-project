@@ -90,7 +90,7 @@
                         var addData = _.extend({},dataModel,model,{
                             name:nameIpt.val(),
                             owner:ownerIpt.val(),
-                            status:[0,1,2][Math.ceil(Math.random()*10%2)],
+                            status:0,
                             completionDate:completionDateIpt.val(),
                             desc:descIpt.val()
                         });
