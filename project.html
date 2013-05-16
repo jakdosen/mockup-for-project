@@ -6,6 +6,19 @@
     <link rel="stylesheet" type="text/css" href="style/siteS.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style/uil71/ui.all.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style/base.css" media="screen"/>
+
+    <style type="text/css">
+        .setting{
+            background: no-repeat url(https://ssl.gstatic.com/mail/sprites/general_black-64f53fe0b60a5d178904a08c3d6d7c6a.png) 0 -306px;
+            height: 21px;
+            width: 21px;
+            display: inline-block;
+            opacity: .5;
+            filter:alpha(opacity=50);
+            cursor: pointer;
+        }
+
+    </style>
 </head>
 <body>
 <div id="nsh-content">
@@ -222,7 +235,7 @@
     <td><%=completionDate%></td>
     <td><%=CreationDate%></td>
     <td><%=recent%></td>
-    <td><span class="gear" style="cursor:pointer;background:#003896;color:#fff;padding:2px">set</span>
+    <td><div class="gear setting"></div>
         <select style="display:none;width:90px">
             <option value="">Select...</option>
             <option value="0">Copy</option>
