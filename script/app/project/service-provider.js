@@ -7,7 +7,7 @@
         _ = require("underscore"),
         ev = window.MP.event,
         Backbone = require("backbone"),
-        data = require("./data");
+        popup = require("./popup");
 
     var ItemModel = Backbone.Model.extend({});
 
@@ -37,8 +37,7 @@
         change:function (e) {   // button operate
             var changeVal = e.target.value;
             if(!changeVal) return;
-            debugger;
-            parseInt(changeVal) === 0 ? ev.trigger(this.model.toJSON(), 0, 1) : ev.trigger(this.model.toJSON, 1, 1) ;
+            parseInt(changeVal) === 0 ? popup.open(this.model.toJSON(), 0, 1) : popup.open(this.model.toJSON, 1, 1) ;
         }
     });
 
