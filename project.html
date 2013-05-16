@@ -173,7 +173,7 @@
                             <th></th>
                         </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="buyer-sp">
                         <tr style="text-align: center">
                             <td>Poster</td>
                             <td></td>
@@ -207,5 +207,14 @@
 <script src="script/seajs/sea-debug.js"
         data-config="app/config.js"
         data-main="app/project/main.js"></script>
+
+<script id="buyer-tpl" type="text/template">
+    <td><%=name%></td>
+    <td><%=owner%></td>
+    <td><%=status%></td>
+    <td><%=completionDate%></td>
+    <td><%=CreationDate%></td>
+    <td><%=recent%></td>
+</script>
 </body>
 </html>
