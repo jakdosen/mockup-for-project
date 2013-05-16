@@ -5,6 +5,7 @@
 ;define(function(require, exports, module){
     var $ = require("jquery"),
         _ = require("underscore"),
+        ev = window.MP.event,
         Backbone = require("backbone"),
         data = require("./data");
 
@@ -19,18 +20,25 @@
         className: "",
         template :_.template($('#provider-tpl').html()),
         events: {
-            "click .tt":"operate"
+            "click .gear": "operate",
+            "change select": "change"
         },
         initialize: function () {
             this.render();
         },
         render : function () {
             var model = this.model;
-            model.set("status",data.status[1*(model.get("status"))]);
+            model.set("status",MP.data.status[1*(model.get("status"))]);
             this.$el.html(this.template(this.model.toJSON()));
         },
         operate:function () {   // button operate
-
+            this.$(".gear").hide().next("select").show();
+        },
+        change:function (e) {   // button operate
+            var changeVal = e.target.value;
+            if(!changeVal) return;
+            debugger;
+            parseInt(changeVal) === 0 ? ev.trigger(this.model.toJSON(), 0, 1) : ev.trigger(this.model.toJSON, 1, 1) ;
         }
     });
 
@@ -51,7 +59,7 @@
             this.collection.each($.proxy(this.renderOne,this));
         },
         getData : function () {
-            var arr = _.filter(data.data, function(item){ return item.status !== 0;})
+            var arr = _.filter(MP.data.data, function(item){ return item.status !== 0;})
             this.collection.reset(arr);
         }
 
