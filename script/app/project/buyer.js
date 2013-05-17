@@ -29,7 +29,8 @@
         template :_.template($('#project-tpl').html()),
         events : {
             "click .gear" : "dropDown",
-            "change select" : "selectOpt"
+            "change select" : "selectOpt",
+            "click ul.gear-option>li" : "launchPopup"
         },
         render : function () {
             var model = this.model;
@@ -43,8 +44,9 @@
         dropDown : function(e){
             var target = $(e.target);
             if(target.hasClass("gear")){
-                target.hide();
-                this.$("select").show();
+                //target.hide();
+                //this.$("select").show();   
+                target.next().toggle();
             }
         },
         selectOpt : function(e){
@@ -53,6 +55,19 @@
                  popup.open(this.model.toJSON(), 0, 0);
             }else{
                  popup.open(this.model.toJSON(), 1 ,0);
+            }
+        },
+        launchPopup: function(e){
+            var target = $(e.target);
+            
+            if(target.is('li')){
+                var action = $(e.target).html();
+                target.parent().hide(); //hide the ul
+                if(action == 'Copy'){
+                    popup.open(this.model.toJSON(), 0, 0);
+                }else{
+                    popup.open(this.model.toJSON(), 1 ,0);
+                }
             }
         }
 

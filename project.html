@@ -17,6 +17,29 @@
             filter:alpha(opacity=50);
             cursor: pointer;
         }
+	
+	ul.gear-options{
+	    display: none;
+	    width: 80px;
+	    position: absolute;
+	    top: 20px;
+	    left: 40px;
+	    background-color: #eeeeee;
+	    z-index: 10;
+	    padding: 0;
+	    margin: 0;
+	    border: 1px solid grey;
+	}
+	ul.gear-options>li{
+	    list-style: none;
+	    float: left;
+	    width: 80px;
+	    margin: 0;
+	    padding: 5px 0 5px 0;
+	}
+	ul.gear-options>li:hover{
+	    background-color: #e4e4e4;
+	}
 
     </style>
 </head>
@@ -235,12 +258,19 @@
     <td><%=completionDate%></td>
     <td><%=CreationDate%></td>
     <td><%=recent%></td>
-    <td><div class="gear setting"></div>
-        <select style="display:none;width:90px">
-            <option value="">Select...</option>
-            <option value="0">Copy</option>
-            <option value="1">Edit</option>
-        </select>
+    <td>
+	<div style="position:relative;">
+	    <div class="gear setting"></div>
+	    <ul class="gear-options">
+		<li>Copy</li>
+		<li>Edit</li>
+	    </ul>
+	    <select style="display:none;width:90px">
+		<option value="">Select...</option>
+		<option value="0">Copy</option>
+		<option value="1">Edit</option>
+	    </select>
+	</div>
     </td>
 </script>
 </body>

@@ -5,7 +5,7 @@
  */
 ;define(function(require, exports, module){
     return{
-        status:['Draft','Estimates Received','Order Received'],
+        status:['Draft','Estimates Received','Order Received','New'],
         data:[
             {
                 'id':1,
@@ -31,12 +31,12 @@
                 'id':3,
                 'name':'English training',
                 'owner':'Robin',
-                'status':1,
+                'status':2,
                 'completionDate':'02/19/2013',
                 'CreationDate':'09/16/2012',
                 'desc':'English training desc',
                 'recent':'Yesterday'
-            },
+            }/*,
             {
                 'id':4,
                 'name':'Primary school education',
@@ -56,7 +56,7 @@
                 'CreationDate':'07/21/2012',
                 'desc':'Spring Poster Compaign desc',
                 'recent':'12:00am'
-            }
+            }*/
         ]
     }
 });
