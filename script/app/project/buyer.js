@@ -47,6 +47,9 @@
                 //target.hide();
                 //this.$("select").show();   
                 target.next().toggle();
+                target.next().mouseleave(function(){
+                    $(this).hide();
+                });
             }
         },
         selectOpt : function(e){

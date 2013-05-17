@@ -1,5 +1,5 @@
 /**
- * User: Gavin.Li
+ * User: Robin.Zhou
  * Date: 5/16/13
  */
 ;define(function(require, exports, module){
@@ -21,7 +21,8 @@
         template :_.template($('#project-tpl').html()),
         events: {
             "click .gear": "operate",
-            "change select": "change"
+            "change select": "change",
+            "click ul.gear-option>li": "launchPopup"
         },
         initialize: function () {
             this.render();
@@ -32,14 +33,31 @@
             this.$el.html(this.template(this.model.toJSON()));
         },
         operate:function (e) {   // button operate
-            if(this.$(e.target).hasClass("gear")){
-                this.$(".gear").hide().next("select").show();
+            var target = $(e.target);
+            if(target.hasClass("gear")){
+                target.next().toggle();
+                target.next().mouseleave(function(){
+                   $(this).hide();
+                });
             }
         },
         change:function (e) {   // button operate
             var changeVal = e.target.value;
             if(!changeVal) return;
             parseInt(changeVal) === 0 ? popup.open(this.model.toJSON(), 0, 1) : popup.open(this.model.toJSON(), 1, 1) ;
+        },
+        launchPopup: function(e){
+            var target = $(e.target);
+
+            if(target.is('li')){
+                var action = $(e.target).html();
+                target.parent().hide(); //hide the ul
+                if(action == 'Copy'){
+                    popup.open(this.model.toJSON(), 0, 0);
+                }else{
+                    popup.open(this.model.toJSON(), 1 ,0);
+                }
+            }
         }
     });
 
