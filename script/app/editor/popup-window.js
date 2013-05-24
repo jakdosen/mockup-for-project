@@ -30,13 +30,13 @@ define(function (require, exports, module) {
         $('#productEditorPopup').dialog({
             title: 'Create Product',
             closeOnEscape: false,
-            bgiframe: false,
             autoOpen: true,
             height: 680,
             width: 1230,
             modal: true,
             resizable: false,
             buttons: {
+                'cancel'	: function(){$(this).dialog( "close" );},
                 'save': function () {$(this).dialog( "close" );}
             },
             create: function () {
@@ -122,6 +122,7 @@ define(function (require, exports, module) {
             modal: 		true,
             resizable: 	false,
             buttons: 	{
+                'cancel'	: function(){$(this).dialog( "close" );},
                 'save'	: function(){$(this).dialog( "close" );}
             },
             create		: function(){
