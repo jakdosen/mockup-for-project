@@ -26,6 +26,13 @@
             background: #ccc;
             color: #fff;
         }
+        .adv-btn{
+            padding: 5px;
+            border-radius: 3px;
+            background: rgb(0, 77, 128);
+            color: #eee;
+            margin-left: 106px;
+        }
     </style>
 </head>
 <body style="overflow: hidden">
@@ -191,16 +198,14 @@
                                             <tr>
                                                 <td class="default-system-products" id="SpecNameUpdate5000002">Poster
                                                 </td>
-                                                <td>
-                                                    <div class="customize-spec" pid="5000002" defaultproduct="1"
-                                                         style="float: left; display: block;">
+                                                <td style="text-align: center">
+                                                    <div class="customize-spec">
                                                         customize
                                                     </div>
                                                     <a class="export-one-spec sideProgress-link">export</a>
                                                 </td>
-                                                <td>
-                                                    <div class="view-spec-sites tip-Ready" pid="5000002"
-                                                         title="This feature is coming soon....">
+                                                <td style="text-align: center">
+                                                    <div class="view-spec-sites tip-Ready" style="display: inline-block">
                                                         view sites
                                                     </div>
                                                 </td>
@@ -209,15 +214,14 @@
 
                                             <tr>
                                                 <td id="SpecNameUpdate5001603">Coffee and Tea Selection</td>
-                                                <td>
-                                                    <div class="customize-spec" pid="5001603" style="float:left;">
+                                                <td style="text-align: center">
+                                                    <div class="customize-spec">
                                                         customize
                                                     </div>
                                                     <a class="export-one-spec sideProgress-link">export</a>
                                                 </td>
-                                                <td>
-                                                    <div class="view-spec-sites tip-Ready" pid="5001603"
-                                                         title="This feature is coming soon....">
+                                                <td style="text-align: center">
+                                                    <div class="view-spec-sites tip-Ready" style="display: inline-block">
                                                         view sites
                                                     </div>
                                                 </td>
@@ -276,7 +280,7 @@
 
 
 <div id="productEditorPopup" class="pop-window ui-dialog-content ui-widget-content"
-     style="display: block; width: auto; min-height: 0px; height: 549px;" scrolltop="0" scrollleft="0">
+     style=" width: auto; min-height: 0px; height: 549px;" scrolltop="0" scrollleft="0">
     <div id="peTemplates" class="pop-window" style="display: none;">
 
     </div>
@@ -504,74 +508,310 @@
         <div style="clear:both;"></div>
     </div>
 </div>
-<div id="productEditorCellAttr" class="pop-window">
 
-    <dl class="pop-tab-dl" id="howToPlaceCards" style="display: none">
-        <dt>How to place fields:</dt>
-        <dd><input type="radio" class="pe-attr-cards-placement" name="fieldsPosition" value="absolute" celldomid="">Overlapped<br>
-            <input type="radio" class="pe-attr-cards-placement" name="fieldsPosition" value="relative" celldomid="">Tiled
-        </dd>
-    </dl>
-    <div id="cellCardsTabs">
-        <form id="IguSMinLForm">
-            <fieldset>
 
-                <dl class="pop-tab-dl">
-                    <dt>Label Position:</dt>
-                    <dd>
-                        <select class="pe-tab-label-position" id="22vAeL2CTableTabLabelPosition">
-                            <option value="top">top</option>
-                            <option selected="" value="left">left</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl class="pop-tab-dl">
-                    <dt>Number of columns:</dt>
-                    <dd>
-                        <select class="pe-tab-cells-per-row" id="22vAeL2CTableTabCellsPerRow">
-                            <option value="1">one</option>
-                            <option value="2" selected="">two</option>
-                            <option value="3">three</option>
-                            <option value="4">four</option>
-                        </select>
-                    </dd>
-                </dl>
-                <dl class="pop-tab-dl">
-                    <dt>Tab Name</dt>
-                    <dd><input type="text" name="name" value="New Tab"></dd>
-                </dl>
-                <dl class="pop-tab-dl">
-                    <dt>Do not show in client view</dt>
-                    <dd><input type="checkbox" name="isHidden"></dd>
-                </dl>
-                <dl class="pop-tab-dl" style="display:none;">
-                    <dt>Do not show in supplier view</dt>
-                    <dd><input type="checkbox" name="isHiddenSplr"></dd>
-                </dl>
-                <dl class="pop-tab-dl">
-                    <dt>Show when</dt>
-                    <dd>
-                        <div>Always show</div>
-                        <ul class="pe-attr-conditions-ul"></ul>
-                        <a class="pe-attr-addCondition" cellcardid="">add condition</a>
-                    </dd>
-                </dl>
-            </fieldset>
-        </form>
+<script type="text/template" id="attr-popup-tpl">
+    <div id="productEditorCellAttr" class="pop-window">
+        <%if(len>1){%>
+        <dl class="pop-tab-dl">
+            <dt>How to place fields:</dt>
+            <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
+                <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
+            </dd>
+        </dl>
+        <%}%>
+        <%if(type=="tab"){%>
+        <div id="cellCardsTabs">
+            <form id="IguSMinLForm">
+                <fieldset>
+
+                    <dl class="pop-tab-dl">
+                        <dt>Label Position:</dt>
+                        <dd>
+                            <select class="pe-tab-label-position">
+                                <option value="top">top</option>
+                                <option selected="" value="left">left</option>
+                            </select>
+                        </dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>Number of columns:</dt>
+                        <dd>
+                            <select class="pe-tab-cells-per-row">
+                                <option value="1">one</option>
+                                <option value="2" selected="">two</option>
+                                <option value="3">three</option>
+                                <option value="4">four</option>
+                            </select>
+                        </dd>
+                    </dl>
+
+                    <dl class="pop-tab-dl">
+                        <dt>Tab Name</dt>
+                        <dd><input type="text" name="name" value="New Tab"></dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>Do not show in client view</dt>
+                        <dd><input type="checkbox" name="isHidden"></dd>
+                    </dl>
+                    <dl class="pop-tab-dl" style="display:none;">
+                        <dt>Do not show in supplier view</dt>
+                        <dd><input type="checkbox" name="isHiddenSplr"></dd>
+                    </dl>
+                    <dl class="pop-tab-dl">
+                        <dt>Show when</dt>
+                        <dd>
+                            <div>Always show</div>
+                            <ul class="pe-attr-conditions-ul"></ul>
+                            <a class="pe-attr-addCondition" cellcardid="">add condition</a>
+                        </dd>
+                    </dl>
+
+
+                </fieldset>
+            </form>
+
+        </div>
+        <%}%>
+        <%if(type=="cell"){%>
+        <div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="cell-attr-cont">
+            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+                    <a href="#EZAOmW0yInTab"><span>New Textbox</span></a>
+                </li>
+                <li class="ui-state-default ui-corner-top">
+                    <a href="#mAHNpnkmInTab"><span>New Textarea</span></a>
+                </li>
+            </ul>
+            <div id="EZAOmW0yInTab" style="max-height:450px;overflow:auto" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                <div>
+                    <input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="EZAOmW0y">
+                    <input type="button" class="pe-attr-button-remove" value="Remove" cellcardid="EZAOmW0y">
+                </div>
+                <form id="EZAOmW0yForm">
+                    <fieldset>
+                        <dl class="pop-tab-dl">
+                            <dt>Field Name</dt>
+                            <dd class="pe-bolded-label"><input type="text" name="name" value="New Textbox"><input
+                                    type="checkbox" name="hideLabel">Hide
+                            </dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Default Value</dt>
+                            <dd><input type="text" name="defaultValue" value=""></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Field Width in px</dt>
+                            <dd><input type="text" name="widthPx" value="120"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Reporting Name</dt>
+                            <dd><input type="text" name="reportingName" value="TEXT_6"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Required</dt>
+                            <dd><input type="checkbox" name="isRequired"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Read only in client view</dt>
+                            <dd><input type="checkbox" name="isReadOnly"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Do not show in client view</dt>
+                            <dd><input type="checkbox" name="isHidden"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Do not show in supplier view</dt>
+                            <dd><input type="checkbox" name="isHiddenSplr"></dd>
+                        </dl>
+                        <a class="pe-attr-style-open adv-btn">show advanced settings</a>
+                        <div style="display:none">
+                            <dl class="pop-tab-dl">
+                                <dt>Label Position:</dt>
+                                <dd>
+                                    <select class="pe-tab-label-position">
+                                        <option value="top">top</option>
+                                        <option selected="" value="left">left</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <dl class="pop-tab-dl">
+                                <dt>Number of columns:</dt>
+                                <dd>
+                                    <select class="pe-tab-cells-per-row">
+                                        <option value="1">one</option>
+                                        <option value="2" selected="">two</option>
+                                        <option value="3">three</option>
+                                        <option value="4">four</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Show when</dt>
+                            <dd>
+                                <div>Always show</div>
+                                <ul class="pe-attr-conditions-ul"></ul>
+                                <a class="pe-attr-addCondition" cellcardid="EZAOmW0y">add condition</a></dd>
+                        </dl>
+
+                        <dl class="pop-tab-dl">
+                            <dt>Styles</dt>
+                            <dd><a class="pe-attr-style-open">advanced settings</a>
+
+                                <div class="pe-attr-style-styles">
+                                    <dl class="pe-attr-style">
+                                        <dt>Label Font:</dt>
+                                        <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
+                                                type="radio" name="fontWeight" value="bold">Bold
+                                        </dd>
+                                    </dl>
+                                    <dl class="pe-attr-style">
+                                        <dt>Label Color:</dt>
+                                        <dd><select name="fontColor">
+                                            <option value="black" selected="">black</option>
+                                            <option value="white">white</option>
+                                            <option value="red">red</option>
+                                        </select></dd>
+                                    </dl>
+                                    <dl class="pe-attr-style">
+                                        <dt>Background Color:</dt>
+                                        <dd><select name="bgColor">
+                                            <option value="white" selected="">white</option>
+                                            <option value="blue">blue</option>
+                                            <option value="CadetBlue">cadet blue</option>
+                                            <option value="yellow">yellow</option>
+                                            <option value="green">green</option>
+                                        </select></dd>
+                                    </dl>
+                                </div>
+                            </dd>
+                        </dl>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <div id="mAHNpnkmInTab" style="max-height:450px;overflow:auto" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                <div><input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="mAHNpnkm"><input
+                        type="button" class="pe-attr-button-remove" value="Remove" cellcardid="mAHNpnkm"></div>
+                <form id="mAHNpnkmForm"><input type="hidden" name="id" value="">
+                    <fieldset>
+                        <dl class="pop-tab-dl">
+                            <dt>Field Name</dt>
+                            <dd class="pe-bolded-label"><input type="text" name="name" value="New Textarea"><input
+                                    type="checkbox" name="hideLabel">Hide
+                            </dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Default Value</dt>
+                            <dd><textarea></textarea></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Rows</dt>
+                            <dd><input type="text" name="rows" value="4"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Columns (in characters)</dt>
+                            <dd><input type="text" name="cols" value="30"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Reporting Name</dt>
+                            <dd><input type="text" name="reportingName" value="TEXTAREA_7"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Required</dt>
+                            <dd><input type="checkbox" name="isRequired"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Read only in client view</dt>
+                            <dd><input type="checkbox" name="isReadOnly"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Do not show in client view</dt>
+                            <dd><input type="checkbox" name="isHidden"></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Do not show in supplier view</dt>
+                            <dd><input type="checkbox" name="isHiddenSplr"></dd>
+                        </dl>
+                        <a class="pe-attr-style-open adv-btn">show advanced settings</a>
+                        <div style="display:none">
+                            <dl class="pop-tab-dl">
+                                <dt>Label Position:</dt>
+                                <dd>
+                                    <select class="pe-tab-label-position">
+                                        <option value="top">top</option>
+                                        <option selected="" value="left">left</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                            <dl class="pop-tab-dl">
+                                <dt>Number of columns:</dt>
+                                <dd>
+                                    <select class="pe-tab-cells-per-row">
+                                        <option value="1">one</option>
+                                        <option value="2" selected="">two</option>
+                                        <option value="3">three</option>
+                                        <option value="4">four</option>
+                                    </select>
+                                </dd>
+                            </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Show when</dt>
+                            <dd>
+                                <div>Always show</div>
+                                <ul class="pe-attr-conditions-ul"></ul>
+                                <a class="pe-attr-addCondition" cellcardid="mAHNpnkm">add condition</a></dd>
+                        </dl>
+                        <dl class="pop-tab-dl">
+                            <dt>Styles</dt>
+                            <dd><a class="pe-attr-style-open">advanced settings</a>
+
+                                <div class="pe-attr-style-styles">
+                                    <dl class="pe-attr-style">
+                                        <dt>Label Font:</dt>
+                                        <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
+                                                type="radio" name="fontWeight" value="bold">Bold
+                                        </dd>
+                                    </dl>
+                                    <dl class="pe-attr-style">
+                                        <dt>Label Color:</dt>
+                                        <dd><select name="fontColor">
+                                            <option value="black" selected="">black</option>
+                                            <option value="white">white</option>
+                                            <option value="red">red</option>
+                                        </select></dd>
+                                    </dl>
+                                    <dl class="pe-attr-style">
+                                        <dt>Background Color:</dt>
+                                        <dd><select name="bgColor">
+                                            <option value="white" selected="">white</option>
+                                            <option value="blue">blue</option>
+                                            <option value="CadetBlue">cadet blue</option>
+                                            <option value="yellow">yellow</option>
+                                            <option value="green">green</option>
+                                        </select></dd>
+                                    </dl>
+                                </div>
+                            </dd>
+                        </dl>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <%}%>
+
+        <div id="currentCellCardsSelectContainer" style="display:none;padding: 20px;margin:20px 0 20px 20px;">
+            <select id="currentCellCardsSelect" style="float:left;">
+            </select>
+
+            <button type="button" id="showThisCellCard" style="float: left;margin-left: 20px;">Show</button>
+        </div>
+
+        <div id="cellCardConfigContainer">
+        </div>
     </div>
-
-
-    <div id="currentCellCardsSelectContainer" style="display:none;padding: 20px;margin:20px 0 20px 20px;">
-        <select id="currentCellCardsSelect" style="float:left;">
-        </select>
-
-        <button type="button" id="showThisCellCard" style="float: left;margin-left: 20px;">Show</button>
-    </div>
-
-    <div id="cellCardConfigContainer">
-    </div>
-</div>
-
+</script>
 
 
 <script src="script/seajs/sea-debug.js"
