@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>File upload Mockup</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style/site.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/siteS.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/uil71/ui.all.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/base.css" media="screen"/>
+
+    <style type="text/css">
+        .setting{
+            background: no-repeat url(https://ssl.gstatic.com/mail/sprites/general_black-64f53fe0b60a5d178904a08c3d6d7c6a.png) 0 -306px;
+            height: 21px;
+            width: 21px;
+            display: inline-block;
+            opacity: .5;
+            filter:alpha(opacity=50);
+            cursor: pointer;
+        }
+	
+	ul.gear-options{
+	    display: none;
+	    width: 80px;
+	    position: absolute;
+	    top: 20px;
+	    left: 40px;
+	    background-color: #eeeeee;
+	    z-index: 10;
+	    padding: 0;
+	    margin: 0;
+	    border: 1px solid grey;
+	}
+	ul.gear-options>li{
+	    list-style: none;
+	    float: left;
+	    width: 80px;
+	    margin: 0;
+	    padding: 5px 0 5px 0;
+	}
+	ul.gear-options>li:hover{
+	    background-color: #e4e4e4;
+	}
+    #uploader{
+        width:60%;
+        margin:0 auto;
+    }
+    #upload-drop-zone{
+        background: #ededef;
+        border: 2px dashed #8b8b8b;
+        padding: 10px;
+        height:100px;
+        border-radius: 5px;
+    }
+    #upload-drop-zone a {
+        color: #4C91EA;
+    }
+    #file-list{
+        width: 100%;
+        margin-top: 20px;
+        border-collapse: collapse;
+    }
+    .hide{
+        display: none;
+    }
+    .delete{
+        background: no-repeat url(https://ssl.gstatic.com/mail/sprites/general_black-64f53fe0b60a5d178904a08c3d6d7c6a.png) 0 -386px;
+        height: 21px;
+        width: 21px;
+        display: inline-block;
+        opacity: .5;
+        filter:alpha(opacity=50);
+        cursor: pointer;
+    }
+    .download{
+        background: no-repeat url(https://ssl.gstatic.com/mail/sprites/general_black-64f53fe0b60a5d178904a08c3d6d7c6a.png) 0 4px;
+        height: 21px;
+        width: 21px;
+        display: inline-block;
+        opacity: .5;
+        filter:alpha(opacity=50);
+        cursor: pointer;
+    }
+    .left{
+        float: left;
+    }
+    .clear{
+        clear: both;
+    }
+    </style>
+
+
+</head>
+<body>
+<div id="nsh-content">
+    <div class="sp-head" style="height: 84px">
+        <div class="sp-head-top">
+            <div class="sp-head-top-central">
+                <div class="sp-head-client-logo">
+                    <a>
+                        <img id="headImgDom" class="sp-custom-headerLogoImg" src="https://s3.amazonaws.com/spd.noosh.com/noosh/v1/sp/5000000/head?rand=-1020965838">
+                    </a>
+                </div>
+                <div class="sp-head-top-center-user">
+                    <!-- User Admin Menu Area -->
+
+                    <a>
+                        <img id="headProfileImage" class="sp-head-top-userprofile-picture" src="https://s3.amazonaws.com/spd.noosh.com/noosh/v1/person/5342936/profile?rand=1106969625">
+                    </a>
+            <span class="sp-head-greeting">
+            	<span class="sp-profileLink" id="profileTitleUserName">Bob</span>
+           	</span>
+
+                    <div class="sp-header-simple-button-wrapper" style="margin-left:100px;">
+                        <div class="sp-header-simple-logout">
+                            Logout
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sp-head-menu">
+        <div class="glb-head-menu-center clearfix">
+
+            <ul class="com-menu-ul">
+                <li class="com-menu-ul-li_has_sub_menu ">
+                    <div class="clearfix">
+                        <a npr="1">
+                            <div id="glbDashboard">Home</div>
+                        </a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <li class="com-menu-ul-li_has_sub_menu ">
+                    <div class="clearfix">
+                        <a npr="1">
+                            <div id="glbProjects">Projects</div>
+                        </a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <li>
+                    <a npr="1">
+                        <div id="glbUsersDropdown">Teams</div>
+                    </a>
+                </li>
+
+                <li class="com-menu">
+                    <a class="com-menu" npr="1">
+                        <div id="glbSpecs">Specs</div>
+                    </a>
+                </li>
+                <li>
+                    <a npr="1">
+                        <div id="glbReports">Reports</div>
+                    </a>
+
+                </li>
+                <li class="com-menu-ul-li_has_sub_menu">
+                    <div class="clearfix">
+                        <a>Admin</a>
+                        <img src="style/images/icons/arrow-down.png">
+                    </div>
+                </li>
+                <div class="invite-coworkers-box-global" id="invite-coworkersExpand">
+                    <div id="invite-coworkers-container">
+
+                        <div style="clear:both;"></div>
+
+                    </div>
+                </div>
+
+            </ul>
+            <!-- Start Right Hand Side Menu -->
+            <div class="home-menu" style="float:right;margin-top:6px;margin-right:-5px;">
+                <a class="invite-global-trigger" style="color:#fff;">
+                    <div class="sp-simple-button" id="glbTopInviteButton" style="float:left;">Invite</div>
+                </a>
+                <a class="create-page-link2">
+                    <div class="sp-simple-button" id="glbTopCreateSite" style="float:left;">Create Site</div>
+                </a>
+                <a class="create-project-link" style="">
+                    <div class="sp-simple-button" id="glbTopCreateProject" style="float:left;">Create Project</div>
+                </a>
+            </div>
+            <div class="sp-menuHover-ph"></div>
+            <div class="sp-menuDdHover-ph"></div>
+
+        </div>
+    </div>
+
+    <div class="sp-header-liner"></div>
+
+</div>
+
+<div id="uploader">
+    <div   id="upload-drop-zone"  style="">
+        <span>To attach files drag and drop files here or </span><a href="javascript:document.getElementById('upload-drop-zone').click()">select files from your computer...</a>
+    </div>
+
+    <div class="operation">
+        <div class="left"><div class="download"></div><span>Download selected</span></div>
+        <div class="left"><div class="delete"></div><span style="vertical-align:bottom">Delete selected</span></div>
+        <div class="clear"></div>
+    </div>
+    <table id="file-list">
+        <tr><td>Select</td><td>Name</td><td>Creator</td><td>Creation Date</td><td>Sharing</td></tr>
+    </table>
+</div>
+
+<script src="./script/lib/jquery/jquery.js"></script>
+<script src="./script/lib/dropzone.js"></script>
+<script>
+    (function(jQuery){
+        var $ = jQuery;
+        $(document).ready(function(){
+            var myDropzone = new Dropzone("#upload-drop-zone", {
+                url: "/file/post",
+                previewsContainer : "#file-list",
+                previewTemplate: "<tr><td><input type=\"checkbox\"/></td><td><div class=\"dz-filename\"><span data-dz-name></span></div></td>    <td><div class=\"dz-size\" data-dz-size></div></td>    <td><img data-dz-thumbnail /></td>    <td>  <div class=\"dz-progress\"><select><option>All Include</option><option>Walmart Team</option><option>Supplier Team</option></select><span class=\"dz-upload\" data-dz-uploadprogress></span></div></td>    <td class=\"hide\"> <div class=\"dz-success-mark\"><span>✔</span></div></td>    <td  class=\"hide\"> <div class=\"dz-error-mark\"><span>✘</span></div>\n  <div class=\"dz-error-message\"><span data-dz-errormessage></span></div> </td></tr>"
+            });
+            function findChoices(){
+                return $('#file-list').find('input:checked');
+            }
+            $('.download').parent().click(function(){
+                //var $items = findChoices();
+            });
+            $('.delete').parent().click(function(){
+                var $items = findChoices();
+                $items.each(function(item, index){
+                    $(this).parent().parent().remove();
+                });
+            });
+
+        });
+    })(jQuery);
+
+
+
+</script>
+</body>
+</html>
