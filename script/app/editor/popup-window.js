@@ -5,6 +5,7 @@
 ;
 define(function (require, exports, module) {
     var $ = require("jquery"),
+        _ = require("underscore"),
         editor = require("./editor"),
         originalContent = "";
     require("jquery.ui");
@@ -17,22 +18,26 @@ define(function (require, exports, module) {
     require("jquery.roundabout-shapes");
     require("jquery.tag");
 
+    var popupTemplate = _.template($("#attr-popup-tpl").html());
     if (originalContent.length == 0) {
         originalContent = $('#productEditorPopup').html();
     }
 
+    /**
+     * adv product editor popup
+     */
     $("#advancedEditor,#serviceSpecsTable .customize-spec").click(function () {
         $('#productEditorPopup').dialog({
             title: 'Create Product',
             closeOnEscape: false,
-            bgiframe: false,
             autoOpen: true,
             height: 680,
             width: 1230,
             modal: true,
             resizable: false,
             buttons: {
-                'loading': function () {}
+                'cancel'	: function(){$(this).dialog( "close" );},
+                'save': function () {$(this).dialog( "close" );}
             },
             create: function () {
                 $('#peMainTabs').show();
@@ -57,7 +62,7 @@ define(function (require, exports, module) {
                             tabDomId	= hrefVal.substr(1),
                             originalCont = $('#productEditorCellAttr').html();
                         //productEditorCellAttr
-                        $('#productEditorCellAttr').dialog({
+                        $(popupTemplate({type:"tab",len:1})).dialog({
                             title: 		'Set Tab Attributes',
                             closeOnEscape:	false,
                             autoOpen: 	true,
@@ -66,22 +71,13 @@ define(function (require, exports, module) {
                             modal: 		true,
                             resizable: 	false,
                             buttons: 	{
-                                'loading'	: function(){}
+                                'update'	: function(){$(this).dialog( "close" );}
                             },
                             create		: function(){
-                               /* //hide the how to place cards
-                                $('#' + me.howToPlaceCardsDomId).hide();
 
-                                //show the properties
-                                me.contentTab(tabDomId);
-
-                                //save|cancel buttons action
-                                me.drawTabActionButtons(tabDomId);
-
-                                me.editor.mediator.publish('attrWindowPoppedUp');*/
                             },
                             close		: function(){
-                                $('#productEditorCellAttr').html(originalCont);
+                                $(this).remove();
                             }
                         });
                     });
@@ -89,17 +85,8 @@ define(function (require, exports, module) {
                 tableMgr_initDelegations:{
                     $('#productEditorPopup .pe-dd-cell').die().live(
                         'mouseenter', function(){
-                            var
-                                cellNum,
-                                numTip = $(this).find('.round-num');
                             $(this).find('.pe-dd-cell-editIcon').show();
-                            cellNum =  $(this).find('.pe-dd-cellCard').length;
 
-                            if(cellNum>1&&!numTip.length){
-                                $(this).append('<a class="round-num">'+cellNum+'</a>');
-                            }
-                            numTip.show();
-                            //console.log(cellNum);
                         }).live(
                         'mouseleave', function(){
                             $(this).find('.pe-dd-cell-editIcon').hide();
@@ -107,25 +94,9 @@ define(function (require, exports, module) {
                             numTip.length&&(numTip.hide());
 
                         });
-                    $('#productEditorPopup .pe-dd-cell .round-num').die().live(
-                        'click',function(){
-
-                            var status = $(this).attr("status");
-                            if(!status||status=="Tiled"){
-                                $(this).parent().find('.pe-dd-cellCard:gt(0)').hide();
-                                $(this).attr("status","Overlapped");
-                            }
-                            else{
-                                $(this).parent().find('.pe-dd-cellCard').show();
-                                $(this).attr("status","Tiled");
-                            }
-
-                        }
-                    )
                 }
 
                 editor.makeCardsDraggable();
-//                $("#peTemplateScrollList").html(newHTML);
 
             },
             close: function () {
@@ -135,4 +106,37 @@ define(function (require, exports, module) {
             }
         });
     });
+
+
+    /**
+     * Cell attribution popup
+     */
+    $(".pe-dd-cell-editIcon").click(function(){
+
+        $(popupTemplate({type:"cell",len:$(this).parent().find(".pe-dd-cellCard").length})).dialog({
+            title: 		'Set Cell Attributes',
+            closeOnEscape:	false,
+            autoOpen: 	true,
+            height: 	'auto',
+            width: 		700,
+            modal: 		true,
+            resizable: 	false,
+            buttons: 	{
+                'cancel'	: function(){$(this).dialog( "close" );},
+                'save'	: function(){$(this).dialog( "close" );}
+            },
+            create		: function(){
+                $("#cell-attr-cont").tabs();
+                $('a.pe-attr-style-open').die().live('click', function(){
+                    $(this).next().show();
+                    $(this).hide();
+                });
+
+            },
+            close		: function(){
+                $(this).remove();
+            }
+        });
+    });
+
 });

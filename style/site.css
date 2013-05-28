@@ -5939,9 +5939,10 @@ ul.uploaded-files a:hover{
 .customize-spec{
 	background: url("images/icons/customize_bg.png") no-repeat;
 	height:20px;
-	margin-left:25px;
+	/*margin-left:25px;*/
 	line-height:20px;
 	font-weight:bold;
+    display: inline-block;
 	cursor:pointer;
 	color:#666;
 	width:110px;
@@ -5949,7 +5950,7 @@ ul.uploaded-files a:hover{
 .view-spec-sites{
 	background: url("images/icons/blank_bg.png") no-repeat;
 	height:20px;
-	margin-left:25px;
+	/*margin-left:25px;*/
 	line-height:20px;
 	font-weight:bold;
 	cursor:default;
