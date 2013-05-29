@@ -512,14 +512,7 @@
 
 <script type="text/template" id="attr-popup-tpl">
     <div id="productEditorCellAttr" class="pop-window">
-        <%if(len>1){%>
-        <dl class="pop-tab-dl">
-            <dt>How to place fields:</dt>
-            <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
-                <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
-            </dd>
-        </dl>
-        <%}%>
+
         <%if(type=="tab"){%>
         <div id="cellCardsTabs">
             <form id="IguSMinLForm">
@@ -646,6 +639,14 @@
                                     </select>
                                 </dd>
                             </dl>
+                            <%if(len>1){%>
+                            <dl class="pop-tab-dl">
+                                <dt>How to place fields:</dt>
+                                <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
+                                    <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
+                                </dd>
+                            </dl>
+                            <%}%>
                         <dl class="pop-tab-dl">
                             <dt>Show when</dt>
                             <dd>
@@ -755,6 +756,14 @@
                                     </select>
                                 </dd>
                             </dl>
+                            <%if(len>1){%>
+                            <dl class="pop-tab-dl">
+                                <dt>How to place fields:</dt>
+                                <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
+                                    <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
+                                </dd>
+                            </dl>
+                            <%}%>
                         <dl class="pop-tab-dl">
                             <dt>Show when</dt>
                             <dd>
