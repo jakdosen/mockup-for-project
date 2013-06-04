@@ -3834,7 +3834,7 @@ div.home-productList-view-switch ul{
     width:212px;
 }
 .home-wizard-body-right-data-area .address-contact-info >input,select,span.site-url{
-    margin: 0 0 5px 5px;
+   /* margin: 0 0 5px 5px;*/
     width: 120px;
 }
 
