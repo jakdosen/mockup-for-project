@@ -130,6 +130,7 @@ define(function (require, exports, module) {
                 $('a.pe-attr-style-open').die().live('click', function(){
                     $(this).next().show();
                     $(this).hide();
+                    $('a.pe-attr-style-open')[1].click();
                 });
 
             },

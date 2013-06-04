@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="style/uil71/ui.all.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="style/base.css" media="screen"/>
     <style type="text/css">
-        .round-num{
+        .round-num {
             border: 1px solid #ccc;
             color: #666;
             border-radius: 10px;
@@ -22,17 +22,28 @@
             cursor: pointer;
             font-weight: bold;
         }
-        .round-num:hover{
+
+        .round-num:hover {
             background: #ccc;
             color: #fff;
         }
-        .adv-btn{
+
+        .adv-btn {
             padding: 5px;
             border-radius: 3px;
             background: rgb(0, 77, 128);
             color: #eee;
             margin-left: 106px;
         }
+
+        .pop-tab-dl {
+            overflow: hidden
+        }
+        .left{float: left}
+        .pop-tab-dl.row-control{float: left;width: 50%;background: #e7e7e7;padding:5px 0;margin-top: 5px;margin-bottom: 5px}
+        .pop-tab-dl.cell-control dt,.pop-tab-dl.row-control dt{width:150px}
+        .pop-tab-dl.cell-control dd,.pop-tab-dl.row-control dd{width:auto;margin-left: 0}
+        .pop-tab-dl.cell-control{background: #eee;;padding:5px 0;margin-top: 5px;margin-bottom: 5px}
     </style>
 </head>
 <body style="overflow: hidden">
@@ -205,7 +216,8 @@
                                                     <a class="export-one-spec sideProgress-link">export</a>
                                                 </td>
                                                 <td style="text-align: center">
-                                                    <div class="view-spec-sites tip-Ready" style="display: inline-block">
+                                                    <div class="view-spec-sites tip-Ready"
+                                                         style="display: inline-block">
                                                         view sites
                                                     </div>
                                                 </td>
@@ -221,7 +233,8 @@
                                                     <a class="export-one-spec sideProgress-link">export</a>
                                                 </td>
                                                 <td style="text-align: center">
-                                                    <div class="view-spec-sites tip-Ready" style="display: inline-block">
+                                                    <div class="view-spec-sites tip-Ready"
+                                                         style="display: inline-block">
                                                         view sites
                                                     </div>
                                                 </td>
@@ -278,548 +291,556 @@
 </div>
 
 
-
 <div id="productEditorPopup" class="pop-window ui-dialog-content ui-widget-content"
      style=" width: auto; min-height: 0px; height: 549px;" scrolltop="0" scrollleft="0">
-    <div id="peTemplates" class="pop-window" style="display: none;">
+<div id="peTemplates" class="pop-window" style="display: none;">
 
-    </div>
+</div>
 
-    <div id="peMainTabs" class="pop-window ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: block;">
-        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-            <li class="ui-state-default ui-corner-top"><a href="#peBasicInfo">Basic Information</a></li>
-            <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#peCustomization">Customization</a>
-            </li>
-        </ul>
-        <div id="peBasicInfo" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
-            <form id="peBasicInfoForm">
-                <fieldset>
-                    <dl class="pop-tab-dl">
-                        <dt>Name:</dt>
-                        <dd><input id="peFormNameInput" type="text" name="name"></dd>
-                    </dl>
-                    <dl class="pop-tab-dl" id="peFormCategoriesDl">
-                        <dt>Product Category:</dt>
-                        <dd>
-                            <input id="peFormCategories" name="productCategories" style="display: none;">
-                            <ul class="tagit ui-widget ui-widget-content ui-corner-all">
-                                <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
-                                                             autocomplete="off" role="textbox" aria-autocomplete="list"
-                                                             aria-haspopup="true"></li>
-                            </ul>
-                            <ul class="tagit ui-widget ui-widget-content ui-corner-all">
-                                <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
-                                                             autocomplete="off" role="textbox" aria-autocomplete="list"
-                                                             aria-haspopup="true"></li>
-                            </ul>
-                            <div id="peFormCategoriesMenuContainer" class="tagit-menu-container">
-                                <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"
-                                    role="listbox" aria-activedescendant="ui-active-menuitem"
-                                    style="z-index: 1035; top: 0px; left: 0px; display: none;"></ul>
-                            </div>
-                        </dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>Description:</dt>
-                        <dd><textarea id="peFormDescInput" cols="30" rows="4" name="desc"></textarea></dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>Icon:</dt>
-                        <dd>
-                            <img id="peFormIconPreview" class="scroll-list-img"
-                                 src="style/images/product_icon_1.png"><br>
-                        </dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>&nbsp;</dt>
-                        <dd>
-                            <div id="peFormIconContainer">
-                                <form name="awspeFormIconInput" id="awsFormpeFormIconInput"
-                                      action="https://s3.amazonaws.com/spd.noosh.com/" method="post"
-                                      enctype="multipart/form-data" accept-charset="UTF-8"><input type="hidden"
-                                                                                                  name="key"
-                                                                                                  value=""><input
-                                        type="hidden" name="AWSAccessKeyId" value="AKIAI36RVYOQNINFPJUA"><input
-                                        type="hidden" name="acl" value="public-read"><input type="hidden"
-                                                                                            name="success_action_redirect"
-                                                                                            value="https://noosh.com"><input
-                                        type="hidden" name="policy" value=""><input type="hidden" name="signature"
-                                                                                    value=""><input type="hidden"
-                                                                                                    name="Content-Type"
-                                                                                                    value=""><input
-                                        type="file" name="file" loaded="w" id="peFormIconInput"
-                                        class="big-file-area"><img style="display:none;"
-                                                                   src="https://s3.amazonaws.com/icons.noosh.com/loading.gif">
-                                </form>
-                            </div>
-                        </dd>
-                    </dl>
-                </fieldset>
-            </form>
-        </div>
-        <div id="peCustomization" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-            <div class="pop-product-customization-dd">
-                <div class="pop-pe-customization-dd-tabs">
-                    <div id="peCustomizationTabs" status="init"
-                         class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-sortable">
-                        <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-                            <li domid="test" class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
-                                    href="#22vAeL2C"><input class="com-form-editor-tab-title-box" value="New Tab"
-                                                            type="text"><span class="com-form-editor-tab-title-text">New Tab</span></a>
-
-                                <div class="ui-icon ui-icon-edit pe-tab-edit"></div>
-                            </li>
-                            <li class="com-form-editor-addTab-li ui-state-default ui-corner-top">
-                                <a href="#peCustomizationSum">
-                                    <div class="ui-icon ui-icon-plus" id="peAddProductTab"></div>
-                                </a>
-                            </li>
-                        </ul>
-                        <div id="22vAeL2C" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-                            <ul id="22vAeL2CTable" class="pe-dd-rows ui-sortable">
-                                <li class="pe-dd-row" id="40bHGOJP" style="width:950px;">
-                                    <ul id="5TSIxyPz" class="pe-dd-cells clearfix ui-sortable">
-                                        <li id="R4txlsyP" class="pe-dd-cell ui-droppable"
-                                            style="width: 890px; height: auto;"><p
-                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
-                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
-
-                                            <div id="f5De53Fl"
-                                                 class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
-                                                 style="z-index:5001;background-color:white;" type="text">
-                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-edit"
-                                                                                                          value="New Textbox"><span
-                                                        class="pe-dd-cellCard-label"
-                                                        style="color:black;font-weight:normal;">New Textbox</span><span
-                                                        class="pe-dd-cellCard-required"><span></span></span></div>
-                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
-                                                                                                          style="width:120px;"
-                                                                                                          value=""><span
-                                                        class="pe-dd-cellCard-valueShown"></span></div>
-                                            </div>
-                                            <div id="zMtfnTev"
-                                                 class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
-                                                 style="z-index:5002;background-color:white;" type="textarea">
-                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-edit"
-                                                                                                          value="New Textarea"><span
-                                                        class="pe-dd-cellCard-label"
-                                                        style="color:black;font-weight:normal;">New Textarea</span><span
-                                                        class="pe-dd-cellCard-required"><span></span></span></div>
-                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><textarea
-                                                        class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit" cols="60"
-                                                        rows="6"></textarea><span
-                                                        class="pe-dd-cellCard-valueShown"></span></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="pe-dd-row" id="TOPRWp8N" style="width:950px;">
-                                    <ul id="adOZlzOJ" class="pe-dd-cells clearfix ui-sortable">
-                                        <li id="prLt8p3T" class="pe-dd-cell ui-droppable"
-                                            style="width: 890px; height: 41px;"><p
-                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
-                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
-
-                                            <div id="dn6DyTmi" class="pe-dd-cellCard clearfix"
-                                                 style="z-index:5003;background-color:white;" type="number">
-                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-edit"
-                                                                                                          value="New Number"><span
-                                                        class="pe-dd-cellCard-label"
-                                                        style="color:black;font-weight:normal;">New Number</span><span
-                                                        class="pe-dd-cellCard-required"><span></span></span></div>
-                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
-                                                                                                          size="15"
-                                                                                                          value=""><span
-                                                        class="pe-dd-cellCard-valueShown"></span></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="pe-dd-row" id="uf1skQax" style="width:950px;">
-
-                                    <ul id="8yENBwSs" class="pe-dd-cells clearfix ui-sortable">
-                                        <li id="ExZqJ6pn" class="pe-dd-cell ui-droppable"
-                                            style="width: 890px; height: 41px;"><p
-                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
-                                                style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
-
-                                            <div id="XEJzZXbS" class="pe-dd-cellCard clearfix"
-                                                 style="z-index:5004;background-color:white;" type="decimal">
-                                                <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-edit"
-                                                                                                          value="New Decimal"><span
-                                                        class="pe-dd-cellCard-label"
-                                                        style="color:black;font-weight:normal;">New Decimal</span><span
-                                                        class="pe-dd-cellCard-required"><span></span></span></div>
-                                                <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
-                                                                                                          class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
-                                                                                                          size="15"
-                                                                                                          value=""><span
-                                                        class="pe-dd-cellCard-valueShown"></span></div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="pe-dd-row pe-dd-row-noSort" id="Q2w4uTxw" style="width:950px;">
-
-                                    <ul id="LTCUiW4d" class="pe-dd-cells clearfix ui-sortable">
-                                        <li id="VCiBAOPe" class="pe-dd-cell ui-droppable" style="width:890px;"><p
-                                                class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
-                                                style="display:none;float:right;margin-top:5px;margin-right:5px;"></p>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                        <div id="peCustomizationSum"
-                             class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
-                            Please click the plug sign to add new tab. Then double click the tab name to edit it.
-                        </div>
+<div id="peMainTabs" class="pop-window ui-tabs ui-widget ui-widget-content ui-corner-all" style="display: block;">
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top"><a href="#peBasicInfo">Basic Information</a></li>
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
+            href="#peCustomization">Customization</a>
+    </li>
+</ul>
+<div id="peBasicInfo" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+    <form id="peBasicInfoForm">
+        <fieldset>
+            <dl class="pop-tab-dl">
+                <dt>Name:</dt>
+                <dd><input id="peFormNameInput" type="text" name="name"></dd>
+            </dl>
+            <dl class="pop-tab-dl" id="peFormCategoriesDl">
+                <dt>Product Category:</dt>
+                <dd>
+                    <input id="peFormCategories" name="productCategories" style="display: none;">
+                    <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+                        <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
+                                                     autocomplete="off" role="textbox" aria-autocomplete="list"
+                                                     aria-haspopup="true"></li>
+                    </ul>
+                    <ul class="tagit ui-widget ui-widget-content ui-corner-all">
+                        <li class="tagit-new"><input type="text" class="ui-widget-content ui-autocomplete-input"
+                                                     autocomplete="off" role="textbox" aria-autocomplete="list"
+                                                     aria-haspopup="true"></li>
+                    </ul>
+                    <div id="peFormCategoriesMenuContainer" class="tagit-menu-container">
+                        <ul class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"
+                            role="listbox" aria-activedescendant="ui-active-menuitem"
+                            style="z-index: 1035; top: 0px; left: 0px; display: none;"></ul>
                     </div>
-                </div>
+                </dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Description:</dt>
+                <dd><textarea id="peFormDescInput" cols="30" rows="4" name="desc"></textarea></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Icon:</dt>
+                <dd>
+                    <img id="peFormIconPreview" class="scroll-list-img"
+                         src="style/images/product_icon_1.png"><br>
+                </dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>&nbsp;</dt>
+                <dd>
+                    <div id="peFormIconContainer">
+                        <form name="awspeFormIconInput" id="awsFormpeFormIconInput"
+                              action="https://s3.amazonaws.com/spd.noosh.com/" method="post"
+                              enctype="multipart/form-data" accept-charset="UTF-8"><input type="hidden"
+                                                                                          name="key"
+                                                                                          value=""><input
+                                type="hidden" name="AWSAccessKeyId" value="AKIAI36RVYOQNINFPJUA"><input
+                                type="hidden" name="acl" value="public-read"><input type="hidden"
+                                                                                    name="success_action_redirect"
+                                                                                    value="https://noosh.com"><input
+                                type="hidden" name="policy" value=""><input type="hidden" name="signature"
+                                                                            value=""><input type="hidden"
+                                                                                            name="Content-Type"
+                                                                                            value=""><input
+                                type="file" name="file" loaded="w" id="peFormIconInput"
+                                class="big-file-area"><img style="display:none;"
+                                                           src="https://s3.amazonaws.com/icons.noosh.com/loading.gif">
+                        </form>
+                    </div>
+                </dd>
+            </dl>
+        </fieldset>
+    </form>
+</div>
+<div id="peCustomization" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+    <div class="pop-product-customization-dd">
+        <div class="pop-pe-customization-dd-tabs">
+            <div id="peCustomizationTabs" status="init"
+                 class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-sortable">
+                <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+                    <li domid="test" class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a
+                            href="#22vAeL2C"><input class="com-form-editor-tab-title-box" value="New Tab"
+                                                    type="text"><span
+                            class="com-form-editor-tab-title-text">New Tab</span></a>
 
-                <div class="pop-product-customization-dd-fields">
-                    Drag these fields and drop them in the tab area
-                    <ul id="peCards" class="pop-product-customization-dd-fields-ul">
-                        <li class="com-draggable-element ui-draggable" form="label">Section Heading</li>
-                        <li class="com-draggable-element ui-draggable" form="text">Textbox</li>
-                        <li class="com-draggable-element ui-draggable" form="textarea">Text Area</li>
-                        <li class="com-draggable-element ui-draggable" form="number">Number</li>
-                        <li class="com-draggable-element ui-draggable" form="decimal">Decimal</li>
-                        <li class="com-draggable-element ui-draggable" form="date">Date</li>
-                        <li class="com-draggable-element ui-draggable" form="select">Dropdown</li>
-                        <li class="com-draggable-element ui-draggable" form="radiobuttons">Radio Buttons</li>
-                        <li class="com-draggable-element ui-draggable" form="checkboxes">Checkboxes</li>
-                        <li class="com-draggable-element ui-draggable" form="quantities">Quantities</li>
-                        <li class="com-draggable-element ui-draggable" form="dimensions">Dimensions</li>
-                        <li class="com-draggable-element ui-draggable" form="image">Image</li>
-                        <li class="com-draggable-element ui-draggable" form="html">Html Text</li>
+                        <div class="ui-icon ui-icon-edit pe-tab-edit"></div>
+                    </li>
+                    <li class="com-form-editor-addTab-li ui-state-default ui-corner-top">
+                        <a href="#peCustomizationSum">
+                            <div class="ui-icon ui-icon-plus" id="peAddProductTab"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div id="22vAeL2C" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+                    <ul id="22vAeL2CTable" class="pe-dd-rows ui-sortable">
+                        <li class="pe-dd-row" id="40bHGOJP" style="width:950px;">
+                            <ul id="5TSIxyPz" class="pe-dd-cells clearfix ui-sortable">
+                                <li id="R4txlsyP" class="pe-dd-cell ui-droppable"
+                                    style="width: 890px; height: auto;"><p
+                                        class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                        style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                    <div id="f5De53Fl"
+                                         class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
+                                         style="z-index:5001;background-color:white;" type="text">
+                                        <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-edit"
+                                                                                                  value="New Textbox"><span
+                                                class="pe-dd-cellCard-label"
+                                                style="color:black;font-weight:normal;">New Textbox</span><span
+                                                class="pe-dd-cellCard-required"><span></span></span></div>
+                                        <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                  style="width:120px;"
+                                                                                                  value=""><span
+                                                class="pe-dd-cellCard-valueShown"></span></div>
+                                    </div>
+                                    <div id="zMtfnTev"
+                                         class="pe-dd-cellCard clearfix pe-dd-cellCard-relativePlaced"
+                                         style="z-index:5002;background-color:white;" type="textarea">
+                                        <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-edit"
+                                                                                                  value="New Textarea"><span
+                                                class="pe-dd-cellCard-label"
+                                                style="color:black;font-weight:normal;">New Textarea</span><span
+                                                class="pe-dd-cellCard-required"><span></span></span></div>
+                                        <div class="pe-dd-cellCard-body pe-body-labelLeft"><textarea
+                                                class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit" cols="60"
+                                                rows="6"></textarea><span
+                                                class="pe-dd-cellCard-valueShown"></span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pe-dd-row" id="TOPRWp8N" style="width:950px;">
+                            <ul id="adOZlzOJ" class="pe-dd-cells clearfix ui-sortable">
+                                <li id="prLt8p3T" class="pe-dd-cell ui-droppable"
+                                    style="width: 890px; height: 41px;"><p
+                                        class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                        style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                    <div id="dn6DyTmi" class="pe-dd-cellCard clearfix"
+                                         style="z-index:5003;background-color:white;" type="number">
+                                        <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-edit"
+                                                                                                  value="New Number"><span
+                                                class="pe-dd-cellCard-label"
+                                                style="color:black;font-weight:normal;">New Number</span><span
+                                                class="pe-dd-cellCard-required"><span></span></span></div>
+                                        <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                  size="15"
+                                                                                                  value=""><span
+                                                class="pe-dd-cellCard-valueShown"></span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pe-dd-row" id="uf1skQax" style="width:950px;">
+
+                            <ul id="8yENBwSs" class="pe-dd-cells clearfix ui-sortable">
+                                <li id="ExZqJ6pn" class="pe-dd-cell ui-droppable"
+                                    style="width: 890px; height: 41px;"><p
+                                        class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                        style="float: right; margin-top: 5px; margin-right: 5px; display: none;"></p>
+
+                                    <div id="XEJzZXbS" class="pe-dd-cellCard clearfix"
+                                         style="z-index:5004;background-color:white;" type="decimal">
+                                        <div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-edit"
+                                                                                                  value="New Decimal"><span
+                                                class="pe-dd-cellCard-label"
+                                                style="color:black;font-weight:normal;">New Decimal</span><span
+                                                class="pe-dd-cellCard-required"><span></span></span></div>
+                                        <div class="pe-dd-cellCard-body pe-body-labelLeft"><input type="text"
+                                                                                                  class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit"
+                                                                                                  size="15"
+                                                                                                  value=""><span
+                                                class="pe-dd-cellCard-valueShown"></span></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="pe-dd-row pe-dd-row-noSort" id="Q2w4uTxw" style="width:950px;">
+
+                            <ul id="LTCUiW4d" class="pe-dd-cells clearfix ui-sortable">
+                                <li id="VCiBAOPe" class="pe-dd-cell ui-droppable" style="width:890px;"><p
+                                        class="pe-dd-cell-editIcon ui-icon ui-icon-edit"
+                                        style="display:none;float:right;margin-top:5px;margin-right:5px;"></p>
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
-
+                <div id="peCustomizationSum"
+                     class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+                    Please click the plug sign to add new tab. Then double click the tab name to edit it.
+                </div>
             </div>
-            <div style="clear:both;"></div>
         </div>
-        <div style="clear:both;"></div>
+
+        <div class="pop-product-customization-dd-fields">
+            Drag these fields and drop them in the tab area
+            <ul id="peCards" class="pop-product-customization-dd-fields-ul">
+                <li class="com-draggable-element ui-draggable" form="label">Section Heading</li>
+                <li class="com-draggable-element ui-draggable" form="text">Textbox</li>
+                <li class="com-draggable-element ui-draggable" form="textarea">Text Area</li>
+                <li class="com-draggable-element ui-draggable" form="number">Number</li>
+                <li class="com-draggable-element ui-draggable" form="decimal">Decimal</li>
+                <li class="com-draggable-element ui-draggable" form="date">Date</li>
+                <li class="com-draggable-element ui-draggable" form="select">Dropdown</li>
+                <li class="com-draggable-element ui-draggable" form="radiobuttons">Radio Buttons</li>
+                <li class="com-draggable-element ui-draggable" form="checkboxes">Checkboxes</li>
+                <li class="com-draggable-element ui-draggable" form="quantities">Quantities</li>
+                <li class="com-draggable-element ui-draggable" form="dimensions">Dimensions</li>
+                <li class="com-draggable-element ui-draggable" form="image">Image</li>
+                <li class="com-draggable-element ui-draggable" form="html">Html Text</li>
+            </ul>
+        </div>
+
     </div>
+    <div style="clear:both;"></div>
+</div>
+<div style="clear:both;"></div>
+</div>
 </div>
 
 
 <script type="text/template" id="attr-popup-tpl">
-    <div id="productEditorCellAttr" class="pop-window">
+<div id="productEditorCellAttr" class="pop-window">
 
-        <%if(type=="tab"){%>
-        <div id="cellCardsTabs">
-            <form id="IguSMinLForm">
-                <fieldset>
+<%if(type=="tab"){%>
+<div id="cellCardsTabs">
+    <form id="IguSMinLForm">
+        <fieldset>
 
-                    <dl class="pop-tab-dl">
-                        <dt>Label Position:</dt>
-                        <dd>
-                            <select class="pe-tab-label-position">
-                                <option value="top">top</option>
-                                <option selected="" value="left">left</option>
-                            </select>
-                        </dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>Number of columns:</dt>
-                        <dd>
-                            <select class="pe-tab-cells-per-row">
-                                <option value="1">one</option>
-                                <option value="2" selected="">two</option>
-                                <option value="3">three</option>
-                                <option value="4">four</option>
-                            </select>
-                        </dd>
-                    </dl>
+            <dl class="pop-tab-dl">
+                <dt>Label Position:</dt>
+                <dd>
+                    <select class="pe-tab-label-position">
+                        <option value="top">top</option>
+                        <option selected="" value="left">left</option>
+                    </select>
+                </dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Number of columns:</dt>
+                <dd>
+                    <select class="pe-tab-cells-per-row">
+                        <option value="1">one</option>
+                        <option value="2" selected="">two</option>
+                        <option value="3">three</option>
+                        <option value="4">four</option>
+                    </select>
+                </dd>
+            </dl>
 
-                    <dl class="pop-tab-dl">
-                        <dt>Tab Name</dt>
-                        <dd><input type="text" name="name" value="New Tab"></dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>Do not show in client view</dt>
-                        <dd><input type="checkbox" name="isHidden"></dd>
-                    </dl>
-                    <dl class="pop-tab-dl" style="display:none;">
-                        <dt>Do not show in supplier view</dt>
-                        <dd><input type="checkbox" name="isHiddenSplr"></dd>
-                    </dl>
-                    <dl class="pop-tab-dl">
-                        <dt>Show when</dt>
-                        <dd>
-                            <div>Always show</div>
-                            <ul class="pe-attr-conditions-ul"></ul>
-                            <a class="pe-attr-addCondition" cellcardid="">add condition</a>
-                        </dd>
-                    </dl>
+            <dl class="pop-tab-dl">
+                <dt>Tab Name</dt>
+                <dd><input type="text" name="name" value="New Tab"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Do not show in client view</dt>
+                <dd><input type="checkbox" name="isHidden"></dd>
+            </dl>
+            <dl class="pop-tab-dl" style="display:none;">
+                <dt>Do not show in supplier view</dt>
+                <dd><input type="checkbox" name="isHiddenSplr"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Show when</dt>
+                <dd>
+                    <div>Always show</div>
+                    <ul class="pe-attr-conditions-ul"></ul>
+                    <a class="pe-attr-addCondition" cellcardid="">add condition</a>
+                </dd>
+            </dl>
 
 
-                </fieldset>
-            </form>
+        </fieldset>
+    </form>
 
-        </div>
-        <%}%>
-        <%if(type=="cell"){%>
-        <div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="cell-attr-cont">
-            <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
-                <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
-                    <a href="#EZAOmW0yInTab"><span>New Textbox</span></a>
-                </li>
-                <li class="ui-state-default ui-corner-top">
-                    <a href="#mAHNpnkmInTab"><span>New Textarea</span></a>
-                </li>
-            </ul>
-            <div id="EZAOmW0yInTab" style="max-height:450px;overflow:auto" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
-                <div>
-                    <input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="EZAOmW0y">
-                    <input type="button" class="pe-attr-button-remove" value="Remove" cellcardid="EZAOmW0y">
-                </div>
-                <form id="EZAOmW0yForm">
-                    <fieldset>
-                        <dl class="pop-tab-dl">
-                            <dt>Field Name</dt>
-                            <dd class="pe-bolded-label"><input type="text" name="name" value="New Textbox"><input
-                                    type="checkbox" name="hideLabel">Hide
-                            </dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Default Value</dt>
-                            <dd><input type="text" name="defaultValue" value=""></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Field Width in px</dt>
-                            <dd><input type="text" name="widthPx" value="120"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Reporting Name</dt>
-                            <dd><input type="text" name="reportingName" value="TEXT_6"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Required</dt>
-                            <dd><input type="checkbox" name="isRequired"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Read only in client view</dt>
-                            <dd><input type="checkbox" name="isReadOnly"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Do not show in client view</dt>
-                            <dd><input type="checkbox" name="isHidden"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Do not show in supplier view</dt>
-                            <dd><input type="checkbox" name="isHiddenSplr"></dd>
-                        </dl>
-                        <a class="pe-attr-style-open adv-btn">show advanced settings</a>
-                        <div style="display:none">
-                            <dl class="pop-tab-dl">
-                                <dt>Label Position:</dt>
-                                <dd>
-                                    <select class="pe-tab-label-position">
-                                        <option value="top">top</option>
-                                        <option selected="" value="left">left</option>
-                                    </select>
-                                </dd>
-                            </dl>
-                            <dl class="pop-tab-dl">
-                                <dt>Number of columns:</dt>
-                                <dd>
-                                    <select class="pe-tab-cells-per-row">
-                                        <option value="1">one</option>
-                                        <option value="2" selected="">two</option>
-                                        <option value="3">three</option>
-                                        <option value="4">four</option>
-                                    </select>
-                                </dd>
-                            </dl>
-                            <%if(len>1){%>
-                            <dl class="pop-tab-dl">
-                                <dt>How to place fields:</dt>
-                                <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
-                                    <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
-                                </dd>
-                            </dl>
-                            <%}%>
-                        <dl class="pop-tab-dl">
-                            <dt>Show when</dt>
-                            <dd>
-                                <div>Always show</div>
-                                <ul class="pe-attr-conditions-ul"></ul>
-                                <a class="pe-attr-addCondition" cellcardid="EZAOmW0y">add condition</a></dd>
-                        </dl>
-
-                        <dl class="pop-tab-dl">
-                            <dt>Styles</dt>
-                            <dd><a class="pe-attr-style-open">advanced settings</a>
-
-                                <div class="pe-attr-style-styles">
-                                    <dl class="pe-attr-style">
-                                        <dt>Label Font:</dt>
-                                        <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
-                                                type="radio" name="fontWeight" value="bold">Bold
-                                        </dd>
-                                    </dl>
-                                    <dl class="pe-attr-style">
-                                        <dt>Label Color:</dt>
-                                        <dd><select name="fontColor">
-                                            <option value="black" selected="">black</option>
-                                            <option value="white">white</option>
-                                            <option value="red">red</option>
-                                        </select></dd>
-                                    </dl>
-                                    <dl class="pe-attr-style">
-                                        <dt>Background Color:</dt>
-                                        <dd><select name="bgColor">
-                                            <option value="white" selected="">white</option>
-                                            <option value="blue">blue</option>
-                                            <option value="CadetBlue">cadet blue</option>
-                                            <option value="yellow">yellow</option>
-                                            <option value="green">green</option>
-                                        </select></dd>
-                                    </dl>
-                                </div>
-                            </dd>
-                        </dl>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-            <div id="mAHNpnkmInTab" style="max-height:450px;overflow:auto" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
-                <div><input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="mAHNpnkm"><input
-                        type="button" class="pe-attr-button-remove" value="Remove" cellcardid="mAHNpnkm"></div>
-                <form id="mAHNpnkmForm"><input type="hidden" name="id" value="">
-                    <fieldset>
-                        <dl class="pop-tab-dl">
-                            <dt>Field Name</dt>
-                            <dd class="pe-bolded-label"><input type="text" name="name" value="New Textarea"><input
-                                    type="checkbox" name="hideLabel">Hide
-                            </dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Default Value</dt>
-                            <dd><textarea></textarea></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Rows</dt>
-                            <dd><input type="text" name="rows" value="4"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Columns (in characters)</dt>
-                            <dd><input type="text" name="cols" value="30"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Reporting Name</dt>
-                            <dd><input type="text" name="reportingName" value="TEXTAREA_7"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Required</dt>
-                            <dd><input type="checkbox" name="isRequired"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Read only in client view</dt>
-                            <dd><input type="checkbox" name="isReadOnly"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Do not show in client view</dt>
-                            <dd><input type="checkbox" name="isHidden"></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Do not show in supplier view</dt>
-                            <dd><input type="checkbox" name="isHiddenSplr"></dd>
-                        </dl>
-                        <a class="pe-attr-style-open adv-btn">show advanced settings</a>
-                        <div style="display:none">
-                            <dl class="pop-tab-dl">
-                                <dt>Label Position:</dt>
-                                <dd>
-                                    <select class="pe-tab-label-position">
-                                        <option value="top">top</option>
-                                        <option selected="" value="left">left</option>
-                                    </select>
-                                </dd>
-                            </dl>
-                            <dl class="pop-tab-dl">
-                                <dt>Number of columns:</dt>
-                                <dd>
-                                    <select class="pe-tab-cells-per-row">
-                                        <option value="1">one</option>
-                                        <option value="2" selected="">two</option>
-                                        <option value="3">three</option>
-                                        <option value="4">four</option>
-                                    </select>
-                                </dd>
-                            </dl>
-                            <%if(len>1){%>
-                            <dl class="pop-tab-dl">
-                                <dt>How to place fields:</dt>
-                                <dd><input type="radio" class="pe-attr-cards-placement"  value="absolute" >Overlapped<br>
-                                    <input type="radio" class="pe-attr-cards-placement"  value="relative" checked="checked">Tiled
-                                </dd>
-                            </dl>
-                            <%}%>
-                        <dl class="pop-tab-dl">
-                            <dt>Show when</dt>
-                            <dd>
-                                <div>Always show</div>
-                                <ul class="pe-attr-conditions-ul"></ul>
-                                <a class="pe-attr-addCondition" cellcardid="mAHNpnkm">add condition</a></dd>
-                        </dl>
-                        <dl class="pop-tab-dl">
-                            <dt>Styles</dt>
-                            <dd><a class="pe-attr-style-open">advanced settings</a>
-
-                                <div class="pe-attr-style-styles">
-                                    <dl class="pe-attr-style">
-                                        <dt>Label Font:</dt>
-                                        <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
-                                                type="radio" name="fontWeight" value="bold">Bold
-                                        </dd>
-                                    </dl>
-                                    <dl class="pe-attr-style">
-                                        <dt>Label Color:</dt>
-                                        <dd><select name="fontColor">
-                                            <option value="black" selected="">black</option>
-                                            <option value="white">white</option>
-                                            <option value="red">red</option>
-                                        </select></dd>
-                                    </dl>
-                                    <dl class="pe-attr-style">
-                                        <dt>Background Color:</dt>
-                                        <dd><select name="bgColor">
-                                            <option value="white" selected="">white</option>
-                                            <option value="blue">blue</option>
-                                            <option value="CadetBlue">cadet blue</option>
-                                            <option value="yellow">yellow</option>
-                                            <option value="green">green</option>
-                                        </select></dd>
-                                    </dl>
-                                </div>
-                            </dd>
-                        </dl>
-                        </div>
-                    </fieldset>
-                </form>
-            </div>
-        </div>
-        <%}%>
-
-        <div id="currentCellCardsSelectContainer" style="display:none;padding: 20px;margin:20px 0 20px 20px;">
-            <select id="currentCellCardsSelect" style="float:left;">
-            </select>
-
-            <button type="button" id="showThisCellCard" style="float: left;margin-left: 20px;">Show</button>
-        </div>
-
-        <div id="cellCardConfigContainer">
-        </div>
+</div>
+<%}%>
+<%if(type=="cell"){%>
+<div class="ui-tabs ui-widget ui-widget-content ui-corner-all" id="cell-attr-cont">
+<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+    <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+        <a href="#EZAOmW0yInTab"><span>New Textbox</span></a>
+    </li>
+    <li class="ui-state-default ui-corner-top">
+        <a href="#mAHNpnkmInTab"><span>New Textarea</span></a>
+    </li>
+</ul>
+<div id="EZAOmW0yInTab" style="max-height:450px;overflow:auto" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+    <div>
+        <input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="EZAOmW0y">
+        <input type="button" class="pe-attr-button-remove" value="Remove" cellcardid="EZAOmW0y">
     </div>
+    <form id="EZAOmW0yForm">
+        <fieldset>
+            <dl class="pop-tab-dl">
+                <dt>Field Name</dt>
+                <dd class="pe-bolded-label"><input type="text" name="name" value="New Textbox"><input
+                        type="checkbox" name="hideLabel">Hide
+                </dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Default Value</dt>
+                <dd><input type="text" name="defaultValue" value=""></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Field Width in px</dt>
+                <dd><input type="text" name="widthPx" value="120"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Reporting Name</dt>
+                <dd><input type="text" name="reportingName" value="TEXT_6"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Required</dt>
+                <dd><input type="checkbox" name="isRequired"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Read only in client view</dt>
+                <dd><input type="checkbox" name="isReadOnly"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Do not show in client view</dt>
+                <dd><input type="checkbox" name="isHidden"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Do not show in supplier view</dt>
+                <dd><input type="checkbox" name="isHiddenSplr"></dd>
+            </dl>
+            <a class="pe-attr-style-open adv-btn">show advanced settings</a>
+
+            <div style="display:none">
+
+                <dl class="pop-tab-dl">
+                    <dt>Show when</dt>
+                    <dd>
+                        <div>Always show</div>
+                        <ul class="pe-attr-conditions-ul"></ul>
+                        <a class="pe-attr-addCondition" cellcardid="EZAOmW0y">add condition</a></dd>
+                </dl>
+
+                <dl class="pop-tab-dl">
+                    <dt>Styles</dt>
+                    <dd><a class="pe-attr-style-open">advanced settings</a>
+
+                        <div class="pe-attr-style-styles">
+                            <dl class="pe-attr-style">
+                                <dt>Label Font:</dt>
+                                <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
+                                        type="radio" name="fontWeight" value="bold">Bold
+                                </dd>
+                            </dl>
+                            <dl class="pe-attr-style">
+                                <dt>Label Color:</dt>
+                                <dd><select name="fontColor">
+                                    <option value="black" selected="">black</option>
+                                    <option value="white">white</option>
+                                    <option value="red">red</option>
+                                </select></dd>
+                            </dl>
+                            <dl class="pe-attr-style">
+                                <dt>Background Color:</dt>
+                                <dd><select name="bgColor">
+                                    <option value="white" selected="">white</option>
+                                    <option value="blue">blue</option>
+                                    <option value="CadetBlue">cadet blue</option>
+                                    <option value="yellow">yellow</option>
+                                    <option value="green">green</option>
+                                </select></dd>
+                            </dl>
+                        </div>
+                    </dd>
+                </dl>
+                <%if(len>1){%>
+                <dl class="pop-tab-dl cell-control">
+                    <dt>How to place fields:</dt>
+                    <dd style="overflow:hidden">
+                        <span class="left" style="line-height: 14px;"><input type="radio" class="pe-attr-cards-placement" value="absolute" name="lap"></span><span class="left">Overlapped</span>
+                        <span class="left" style="line-height: 14px;"><input type="radio" class="pe-attr-cards-placement left" value="relative" checked="checked" name="lap"></span><span class="left">Tiled</span>
+                    </dd>
+                </dl>
+                <%}%>
+                <dl class="pop-tab-dl row-control">
+                    <dt>Label Position:</dt>
+                    <dd>
+                        <select class="pe-tab-label-position">
+                            <option value="top">top</option>
+                            <option selected="" value="left">left</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl row-control">
+                    <dt>Number of columns:</dt>
+                    <dd>
+                        <select class="pe-tab-cells-per-row">
+                            <option value="1">one</option>
+                            <option value="2" selected="">two</option>
+                            <option value="3">three</option>
+                            <option value="4">four</option>
+                        </select>
+                    </dd>
+                </dl>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<div id="mAHNpnkmInTab" style="max-height:450px;overflow:auto"
+     class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+    <div><input type="button" class="pe-attr-button-show" value="Bring to top" cellcardid="mAHNpnkm"><input
+            type="button" class="pe-attr-button-remove" value="Remove" cellcardid="mAHNpnkm"></div>
+    <form id="mAHNpnkmForm"><input type="hidden" name="id" value="">
+        <fieldset>
+            <dl class="pop-tab-dl">
+                <dt>Field Name</dt>
+                <dd class="pe-bolded-label"><input type="text" name="name" value="New Textarea"><input
+                        type="checkbox" name="hideLabel">Hide
+                </dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Default Value</dt>
+                <dd><textarea></textarea></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Rows</dt>
+                <dd><input type="text" name="rows" value="4"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Columns (in characters)</dt>
+                <dd><input type="text" name="cols" value="30"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Reporting Name</dt>
+                <dd><input type="text" name="reportingName" value="TEXTAREA_7"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Required</dt>
+                <dd><input type="checkbox" name="isRequired"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Read only in client view</dt>
+                <dd><input type="checkbox" name="isReadOnly"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Do not show in client view</dt>
+                <dd><input type="checkbox" name="isHidden"></dd>
+            </dl>
+            <dl class="pop-tab-dl">
+                <dt>Do not show in supplier view</dt>
+                <dd><input type="checkbox" name="isHiddenSplr"></dd>
+            </dl>
+            <a class="pe-attr-style-open adv-btn">show advanced settings</a>
+
+            <div style="display:none">
+
+                <dl class="pop-tab-dl">
+                    <dt>Show when</dt>
+                    <dd>
+                        <div>Always show</div>
+                        <ul class="pe-attr-conditions-ul"></ul>
+                        <a class="pe-attr-addCondition" cellcardid="mAHNpnkm">add condition</a></dd>
+                </dl>
+                <dl class="pop-tab-dl">
+                    <dt>Styles</dt>
+                    <dd><a class="pe-attr-style-open">advanced settings</a>
+
+                        <div class="pe-attr-style-styles">
+                            <dl class="pe-attr-style">
+                                <dt>Label Font:</dt>
+                                <dd><input type="radio" name="fontWeight" value="normal" checked="">Normal<input
+                                        type="radio" name="fontWeight" value="bold">Bold
+                                </dd>
+                            </dl>
+                            <dl class="pe-attr-style">
+                                <dt>Label Color:</dt>
+                                <dd><select name="fontColor">
+                                    <option value="black" selected="">black</option>
+                                    <option value="white">white</option>
+                                    <option value="red">red</option>
+                                </select></dd>
+                            </dl>
+                            <dl class="pe-attr-style">
+                                <dt>Background Color:</dt>
+                                <dd><select name="bgColor">
+                                    <option value="white" selected="">white</option>
+                                    <option value="blue">blue</option>
+                                    <option value="CadetBlue">cadet blue</option>
+                                    <option value="yellow">yellow</option>
+                                    <option value="green">green</option>
+                                </select></dd>
+                            </dl>
+                        </div>
+                    </dd>
+                </dl>
+                <%if(len>1){%>
+                <dl class="pop-tab-dl cell-control">
+                    <dt>How to place fields:</dt>
+                    <dd style="overflow:hidden">
+                        <span class="left" style="line-height: 14px;"><input type="radio" class="pe-attr-cards-placement" value="absolute" name="lap"></span><span class="left">Overlapped</span>
+                        <span class="left" style="line-height: 14px;"><input type="radio" class="pe-attr-cards-placement left" value="relative" checked="checked" name="lap"></span><span class="left">Tiled</span>
+                    </dd>
+                </dl>
+                <%}%>
+                <dl class="pop-tab-dl row-control">
+                    <dt>Label Position:</dt>
+                    <dd>
+                        <select class="pe-tab-label-position">
+                            <option value="top">top</option>
+                            <option selected="" value="left">left</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl class="pop-tab-dl row-control">
+                    <dt>Number of columns:</dt>
+                    <dd>
+                        <select class="pe-tab-cells-per-row">
+                            <option value="1">one</option>
+                            <option value="2" selected="">two</option>
+                            <option value="3">three</option>
+                            <option value="4">four</option>
+                        </select>
+                    </dd>
+                </dl>
+            </div>
+        </fieldset>
+    </form>
+</div>
+</div>
+<%}%>
+
+<div id="currentCellCardsSelectContainer" style="display:none;padding: 20px;margin:20px 0 20px 20px;">
+    <select id="currentCellCardsSelect" style="float:left;">
+    </select>
+
+    <button type="button" id="showThisCellCard" style="float: left;margin-left: 20px;">Show</button>
+</div>
+
+<div id="cellCardConfigContainer">
+</div>
+</div>
 </script>
 
 
