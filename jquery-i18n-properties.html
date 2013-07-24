@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery.i18n.properties: Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style/i18n.css" type="text/css" media="screen, projection">
+    <!-- JS -->
+    <script type="text/javascript" src="script/lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="script/lib/jquery/jquery.i18n.properties.js"></script>
+    <script>
+        var $ = jQuery,i18n = $.i18n;
+        $(function(){
+            loadResources(browserLanguage());
+            $('#complex').keyup(function(){
+                var key = 'msg.complex';
+                var val = eval(key + '("'+ this.value +'")');
+                $('#span_complex').html('['+ key + '] -> ' + val);
+            });
+        });
+        function loadResources(lang) {
+            i18n.properties({
+                name:'Messages',
+                path:'resources/',
+                mode:'both',
+                language: lang,
+                callback: function() {
+                    parseByMap();
+                    parseByVar();
+                }
+            });
+        }
+        function parseByMap(){ // msg_string = jQuery.i18n.prop(key)
+            var key = 'msg.helloworld', val = i18n.prop(key);
+            $('#map').html('['+ key + '] -> ' + val);
+        }
+        function parseByVar(){ // msg_string = eval(key)
+            var key = 'msg.helloworld', val = eval(key);
+            $('#var').html('['+ key + '] -> ' + val);
+        }
+        function browserLanguage(){
+            var lang =  i18n.browserLang();
+            $('#language').text(lang);
+            return lang.replace(/\-/,'_');
+        }
+    </script>
+</head>
+<body>
+<h2>jQuery.i18n.properties :: Demo</h2>
+<h3>Current Browser Language: <span id="language"></span></h3>
+<h3>Simple usage: </h3>
+<blockquote>
+    <h3>map: </h3>
+    <p id="map"></p>
+    <h3>var: </h3>
+    <p id="var"></p>
+</blockquote>
+<h3>Parameter usage: </h3>
+<blockquote>
+    <input type="text" id="complex" placeholder="Please enter a name..."/> <span id="span_complex"></span>
+</blockquote>
+
+<h3> Reference:
+    <a href="http://code.google.com/p/jquery-i18n-properties/">http://code.google.com/p/jquery-i18n-properties/</a>
+</h3>
+</body>
+</html>

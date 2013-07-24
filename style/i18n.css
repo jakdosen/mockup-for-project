@@ -1,0 +1,7 @@
+h2,h3{
+    color: #777;
+}
+h3 small{
+    font-size: 12px;
+    color: #555;
+}
