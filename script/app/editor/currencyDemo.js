@@ -26,6 +26,7 @@
     var Item = Backbone.Model.extend({});
     var ItemList = Backbone.Collection.extend({ model : Item });
     var ItemView = Backbone.View.extend({
+        tagName:"option",
         model: Item,
         template: _.template($('#currency-tpl').html()),
         render: function(){
@@ -45,16 +46,28 @@
             this.collection.bind("reset", this.renderAll, this);
             this.getData();
         },
+        events:{
+            "select#currency-select change" : "currency"
+        },
+        currency:function(e){
+            var $select = $(e.target),
+                opt = $select.val();
+            var $sum = $("#sum"),
+                sum = $sum.val(),
+                cur = $sum.attr("cur");
+            cur && (sum = accounting.unformat(sum+" "+cur, Currency.settings[cur.toLowerCase()].decimal));
+            $sum.val(Currency.convert(sum,opt)).attr("cur",opt);
+        },
         renderOne: function(item){
             var itemView = new ItemView({model:item});
             $(this.renderTarget).append(itemView.el);
         },
         renderAll: function(){
-            //$(this.renderTarget).empty();
             this.collection.each($.proxy(this.renderOne,this));
         },
         getData : function(){
             this.collection.reset(data);
+            this.$("#currency-select").change(this.currency);
         }
     });
 
