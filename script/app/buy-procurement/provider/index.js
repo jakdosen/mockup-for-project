@@ -131,4 +131,6 @@ define(function(require,exports){
         }
     });
     new AppView;
+    //need to change to event pattern
+    require.async("./rfe.js");
 });

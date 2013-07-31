@@ -8,6 +8,7 @@
    <!-- <link rel="stylesheet" type="text/css" href="../../style/uil71/ui.all.css" media="screen"/>-->
     <link rel="stylesheet" type="text/css" href="../../style/base.css" media="screen"/>
     <link rel="stylesheet" type="text/css" href="../../style/spNewHome.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../style/spBuying.css" media="screen"/>
 </head>
 <body>
 <h2 style="color: red">SERVICE PROVIDER VIEW</h2>
@@ -437,6 +438,44 @@
                 Click <a id="gotoSpecPageLink" href="#" npr="1">here</a> if you do not see the appropriate request form.				</div>
         </div>
     </div>
+</script>
+<!--        buying's templates          -->
+<script type="text/template" id="buying-view">
+    <div class="container" id="buying">
+        <div class="title">April promotion package</div>
+        <fieldset>
+            <legend>April promotion package</legend>
+            <div>4/4 Suppliers viewed</div>
+            <div>0/4 Suppliers responded</div>
+            <ul id="products"><li>
+                <div class="left w300">Products</div>
+                <div class="left w100">Quantity</div>
+                <div class="left w200">Supplier1</div>
+                <div class="left w200">Supplier2</div>
+                <div class="left w200">Supplier3</div>
+                <div class="left w200">Supplier4</div>
+                <div class="clear"></div>
+            </li> </ul>
+            <div>Request for estimate:</div>
+            <ul id="rfes">               </ul>
+        </fieldset>
+    </div>
+</script>
+
+<script type="text/template" id="product-tpl">
+    <div class="left w300"><img src="<%=imageSrc%>" class="in-block"/><span class="in-block" style="vertical-align:top"><%=name%></span></div>
+    <div class="left w100"><select class="w60"><%_.each(quantity,function(item){%><option value="<%=item%>"><%=item%></option><%})%></select></div>
+    <%_.each(supplier,function(s){%><div class="left w200"><%=s.name%></div><%})%>
+    <div class="clear"></div>
+</script>
+<script type="text/template" id="rfe-tpl">
+    <div class="left w200"><%=title%></div>
+    <div class="left w200">Sent <%=sentDate%></div>
+    <div class="left w200">Due Date <%=dueDate%></div>
+    <div class="left w200">Completion Date <%=completionDate%></div>
+    <div class="left w200"><%=status%></div>
+    <div class="left"><input type="button" value="Invite additional supplier"></div>
+    <div class="clear"></div>
 </script>
 <script src="../../script/seajs/sea-debug.js"
         data-config="app/config.js"

@@ -1,0 +1,33 @@
+#buying ul{
+    list-style: none;
+    padding: 0;
+}
+#buying ul li{
+    line-height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.left{
+    float: left;
+}
+.clear{
+    clear: both;
+}
+.in-block{display: inline-block;}
+.w300{
+    width: 300px;
+}
+.w200{
+    width: 200px;
+}
+.w100{
+    width: 100px;
+}
+.w60{
+    width: 60px;
+}
+#products img{
+    max-width:100px;
+    max-height:60px;
+}

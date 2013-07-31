@@ -57,7 +57,41 @@ define(function (require, exports, module) {
                 isSignUp:true
             }
         ],
-        estimate:[],
+        estimate:[
+            {
+                id: 1,
+                title: "RFE print",
+                comment:"",
+                sentDate:"03/11/2013",
+                dueDate:"05/11/2013",
+                completionDate:"05/11/2013",
+                status:"In Estimation",
+                product: [1,2],
+                supplier: [1,2]
+            },
+            {
+                id: 2,
+                title: "RFE print",
+                comment:"",
+                sentDate:"03/11/2013",
+                dueDate:"05/11/2013",
+                completionDate:"05/11/2013",
+                status:"In Estimation",
+                product: [1,2,3],
+                supplier: [1,2,3]
+            },
+            {
+                id: 3,
+                title: "RFE brochure",
+                comment:"brochures",
+                sentDate:"03/11/2013",
+                dueDate:"05/11/2013",
+                completionDate:"05/11/2013",
+                status:"Recalled",
+                product: [1,2],
+                supplier: [1,2]
+            }
+        ],
         order:[]
     }
 });
