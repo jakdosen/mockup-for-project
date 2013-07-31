@@ -1,0 +1,54 @@
+ul.ul-confirm{
+    list-style: none;
+}
+ul.ul-confirm li{
+    margin-top: 10px;
+}
+ul.ul-confirm li label{
+    font-weight: bold;
+    width: 200px;
+    float: left;
+    text-align: right;
+}
+ul.ul-confirm li>input.normal,textarea{
+    margin-left: 50px;
+    width: 300px;
+}
+
+table.quote{
+    margin-left: 50px;
+    border: none;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+table.quote tr{
+    border: none;
+}
+
+table.quote tr.title{
+    background-color: grey;
+    font-weight: bold;
+    color: white;
+}
+
+table.quote td{
+    border: none;
+    padding: 5px;
+}
+
+table.quote td.label{
+    font-weight: bold;
+    text-align: right;
+    padding-right: 20px;
+}
+
+table.quote input[type="text"]{
+    width: 50px;
+}
+
+div.rejected-quote{
+    margin: 10px 0 10px 20px;
+    border: 1px solid black;
+    padding: 5px;
+}

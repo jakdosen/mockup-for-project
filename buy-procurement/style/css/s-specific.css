@@ -1,0 +1,890 @@
+/********* S - CSS: Documentation **********/
+/*******************************************/
+/*******************************************/
+/*** Naming convention for CSS elements ****/
+/*******************************************/
+/****** sp prefix for all related CSS ******/
+/*******************************************/
+/*** The following provides a 'chapter' based
+system of finding specific pieces of CSS ***/
+/*******************************************/
+/** GLB - Global Page Management Elements **/
+/*******************************************/
+/*******************************************/
+/*******************************************/
+/************ END DOCUMENTATION ************/
+
+/** GLB - Global Page Management Elements **/
+
+*{
+	margin:0;
+	padding:0;
+}
+body{
+    font-family: 'VAG Rounded W01 Light',sans-serif;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+	border:none;
+	cursor:pointer;
+}
+a img{
+	border:none;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+.clearfix {
+    display: inline-block;
+    zoom: 1;
+    overflow:hidden;
+}
+.clear {
+	overflow:hidden;
+	width:100%;
+}
+body > #nsh-container { /*Controls the formatting of the entire page*/
+    height: auto;
+    min-height: 100%;
+}
+/** End - Global Page Management Elements **/
+
+/** LGN - Login Page Management Elements ***/
+
+.nsh-login-headerWrapper{
+	left: 50%;
+    margin: 0 auto 0 -480px;
+    min-width: 960px;
+    position: relative;
+    width: 960px;
+}
+.nsh-service-login-header {
+	margin-left:35px;
+	background-image:url("/default/images/background/header_transparent_bg.png");
+	padding:0px;
+	background-repeat:no-repeat;
+	height: 130px;
+	width: 867px;
+	margin-bottom:30px;
+}
+.nsh-login-headerMenu{
+	clear: both;
+    height: 49px;
+    left: 50%;
+    margin-left: -480px;
+    position: absolute;
+    top: 75px;
+    width: 960px;
+    z-index: 80;
+}
+.nsh-login-headerMenu a{
+	float:left;
+	display:block;
+	height:49px;
+}
+.login-service-noosh-link{
+	display: block;
+    height: 40px;
+    left: 50%;
+    margin-left: -495px;
+    position: absolute;
+    top: 16px;
+    width: 190px;
+    z-index: 55;
+	margin-top:-1px;
+}
+.login-service-facebook{
+	height: 21px;
+    left: 50%;
+    margin-left: 397px;
+    position: absolute;
+    top: 10px;
+    width: 21px;
+	
+}
+.login-service-twitter{
+	height: 21px;
+    left: 50%;
+    margin-left: 425px;
+    position: absolute;
+    top: 10px;
+    width: 21px;
+}
+.login-service-linkedin{
+	height: 21px;
+    left: 50%;
+    margin-left: 454px;
+    position: absolute;
+    top: 10px;
+    width: 21px;
+}
+.nsh-login {
+	padding-top: 0px;
+    overflow: hidden;
+    padding-bottom: 140px;
+	clear:right;
+}
+.nsh-login-bluebox-service {
+    border-radius: 15px;
+    color: #ffffff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    padding: 0px;
+	min-height: 416px;
+	width:990px;
+}
+.nsh-login-leftcontent-service {
+    clear: right;
+    color: #FFFFFF;
+    float: left;
+    font-size: 12px;
+    height: 510px;
+    text-align: left;
+    width: 639px;
+}
+.nsh-login-leftheader {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 7px 7px #888888;
+    clear: right;
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 90px;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 640px;
+}
+.nsh-login-leftheader-text {
+    color: #232F84;
+    float: left;
+    font-size: 27px;
+    padding-left: 35px;
+    padding-top: 29px;
+    position: relative;
+}
+.nsh-login-leftcontent {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 7px 7px #888888;
+    clear: right;
+    color: #FFFFFF;
+    font-size: 12px;
+    height: 410px;
+    text-align: left;
+    width: 640px;
+}
+.nsh-login-leftcontent-text {
+    color: #676767;
+    font-size: 17px;
+    margin-bottom: 0;
+    margin-left: 35px;
+    padding-top: 29px;
+    position: relative;
+    text-align: justify;
+    width: 450px;
+}
+.nsh-login-leftcontent-textbg {
+    background-repeat: no-repeat;
+    color: #676767;
+    font-size: 17px;
+    height: 200px;
+    margin-left: 25px;
+    margin-right: 20px;
+    margin-top: 30px;
+    text-align: right;
+    width: 595px;
+}
+.sp-custom-loginImg {
+    max-height: 190px;
+    max-width: 595px;
+}
+.nsh-service-rightbox {
+    border-radius: 10px 10px 10px 10px;
+    box-shadow: 7px 7px 7px #888888;
+    float: left;
+    margin-left: 35px;
+    min-height: 491px;
+    padding: 10px;
+    text-align: center;
+    width: 281px;
+}
+.nsh-rightheadertext {
+    font-family: NewsCycle,Arial Narrow,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+.nsh-loginformfield {
+    margin-top: 10px;
+}
+.nsh-login-fieldLabel {
+    float: left;
+    height: 28px;
+    line-height: 25px;
+    margin-top: 10px;
+    text-align: right;
+    width: 100px;
+}
+.nsh-login-textbox {
+    color: #000000;
+    font-size: 14px;
+    height: 22px;
+    margin-right: 10px;
+    margin-top: 11px;
+    padding-left: 5px;
+    width: 160px;
+}
+.check-box-div {
+    margin-top: 20px;
+    width: 260px;
+}
+.check-box {
+    width: 10px;
+}
+.select-box-div {
+    width: 265px;
+}
+.nsh-login-select {
+    margin-left: 14px;
+    width: 254px;
+}
+.glb-button-wrapper {
+    height: 42px;
+    margin: 30px 0 0 3%;
+}
+.big_button_single {
+    background: url("/default/images/buttons/big_button_rightcap.png") no-repeat scroll right top transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-family: 'VAG Rounded W01 Light',sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    height: 42px;
+    margin-right: 6px;
+    padding: 0 23px 0 4px;
+    text-decoration: none;
+}
+.big_button_single span {
+    background: url("/default/images/buttons/big_button_left.png") no-repeat scroll 0 0 transparent;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: block;
+    line-height: 22px;
+    margin-left: 5px;
+    padding: 7px 0 13px 18px;
+}
+.nsh-login-signup {
+    cursor: pointer;
+    float: right;
+    margin-right: 14px;
+    margin-top: 15px;
+}
+.nsh-login-link-wrapper {
+    float: right;
+    margin-right: 15px;
+}
+.nsh-login-forgotpassword {
+    color: #FFFFFF;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.nsh-login-learnmore {
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/** End - Login Page Management Elements ***/
+
+/* RGR - Register Page Management Elements */
+
+/* End - Register Page Management Elements */
+
+/** HDR - Page Header Management Elements **/
+
+
+
+/** End - Page Header Management Elements **/
+
+/** FTR - Footer Page Management Elements **/
+
+.nsh-foot{
+	color: #666666;
+	background-image:url("/default/images/background/footer_big_grey.png");
+    border-top: 0px solid #dfdcdc;
+    width: 100%;
+	height: 90px;
+	z-index:-1;
+	position:absolute;
+	clear:both;
+	margin-top:-100px;
+	overflow:hidden;
+	box-shadow:0 2px 0 #999999 inset;
+}
+
+.nsh-foot-wrap{
+	margin:auto;
+	height:25px;
+	width:960px;
+	margin-top:10px;
+	padding-top:10px;
+}
+
+.nsh-foot-wrap a{
+	color:#666;
+}
+
+.foot-center-ul {
+	margin-right: 15px;
+	margin-top: 5px !important;
+}
+
+.foot-center-ul li{
+	float:left;
+	list-style:none;
+	margin-right: 10px;
+	font-size: 10px;
+}
+
+.foot-center a {
+    outline: medium none;
+    text-decoration: none;
+	color: #666666;
+}
+
+.foot-center.foot-center-ul li:after {
+	font-weight: bold;
+    padding: 0 5px;
+}
+
+.foot-center-ul > li:after {
+    padding: 0 3px;
+	display: inline-block
+}
+
+.foot-center{
+	width: 990px;
+	height:20px;
+	margin: auto;
+	margin-top:13px;
+	padding-top:10px;
+}
+
+.foot-center-logo {
+	float:left;
+	background-image:url("/default/images/logos/noosh_footer_poweredby.png");
+	height:30px;
+	width:140px;
+	margin-top: -9px;
+	background-repeat:no-repeat;
+}
+
+.foot-service-logo {
+	float:left;
+	background-image:url("/default/images/logos/noosh_footer_default.png");
+	background-repeat:no-repeat;
+	height:20px;
+	width:94px;
+	margin-top: -5px;
+	margin-right: 5px;
+}
+
+.foot-center-text{
+	float: right;
+    text-align: right;
+ 	font-size: 12px;
+	color: #666666 !important;
+}
+
+/** End - Footer Page Management Elements **/
+
+/** PRF - Profile Page Management Elements */
+
+.nsh-sp-profile-errormsg{
+	height: 10px;
+    margin-bottom: 3px;
+    margin-left: 165px;
+    margin-top: -13px;
+    width: 150px;
+}
+
+.profile-headTitle {
+	margin:0;
+	border:1px solid #000;
+	border-radius:10px 10px 0 0;
+	/*background: #999;*/
+	background: #003896; /* Old browsers */
+	background: -moz-linear-gradient(top, #5dadfb 0%, #0067c9 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#5dadfb), color-stop(100%,#0067c9)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #5dadfb 0%,#0067c9 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #5dadfb 0%,#0067c9 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #5dadfb 0%,#0067c9 100%); /* IE10+ */
+	background: linear-gradient(top, #5dadfb 0%,#0067c9 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5dadfb', endColorstr='#0067c9',GradientType=0 ); /* IE6-8 */
+
+	padding-left:13px;
+	padding-top:6px;
+	font-weight:bold;
+	font-size:15px;
+	color:#fff;
+	border-bottom:0 none;
+	height:28px;
+	width:100px;
+}
+
+.user-profile{
+
+    float:left;
+	border:1px solid grey;
+	border-radius: 0 10px 10px 10px;
+	padding:15px;
+	width:700px;
+	box-shadow:5px 5px 5px #666;
+
+}
+.user-profile-wrapper{
+    float:left;
+
+
+}
+
+.user-profile-picture-container{
+    float: left;
+    width: 200px;
+}
+.user-profile-picture{
+    max-width: 70px;
+	max-height:70px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    float: left;
+}
+.user-profile-picture-file{
+	height: 30px;
+    left: 12px;
+    opacity: 0;
+    position: absolute;
+    top: 132px;
+	cursor:pointer;
+}
+.user-profile-picture-change{
+    position: absolute;
+    top: 132px;
+    left: 12px;
+}
+.user-profile-picture-note{
+    position: absolute;
+    top: 220px;
+    left: 22px;
+    width: 150px;
+}
+
+.user-profile-pictureWrapper{
+    float:left;
+	margin-left:30px;
+	margin-right:50px;
+	margin-top:10px;
+	box-shadow:5px 5px 5px #666;
+
+}
+.user-profile-info{
+     position: relative;
+     width: 405px;
+     border:none;
+     margin-left:185px;
+}
+
+.user-profile-info-dl dt{
+    color: #666666;
+    float: left;
+    font-weight: bold;
+    height: 25px;
+    line-height: 25px;
+    min-width: 100px;
+    padding-left: 0px;
+    padding-right: 5px;
+    text-align: right;
+	margin-bottom:10px;
+}
+
+.user-profile-info-dl dd{
+    height: 25px;
+    line-height: 25px;
+    padding-left: 20px;
+	margin-bottom:10px;
+}
+
+.user-profile-info-dl dd input{
+    width: 279px;
+    display: none;
+}
+
+.user-profile-info-dl dd label {
+    display: inline-block;
+    height: 25px;
+    width: 280px;
+	padding-left:5px;
+}
+
+.user-profile-info-dl dd select{
+    display: none;
+	width: 285px;
+}
+
+.user-profile-buttons{
+    float:left;
+    position:relative;
+}
+
+.user-profile-buttons a{
+    line-height: 20px;
+    margin-bottom: 2px;
+    padding: 4px 4px 0px 4px;
+  	background-color:#267BB6;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px 4px 4px 4px;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+	text-decoration: none;
+
+}
+.user-profile-label-enable-controll:hover{
+	background-color:#f0f0f0;
+	cursor:text;
+}
+.user-profile-buttons-update{
+    text-align:center;
+    float:left
+}
+
+.user-profile-buttons-update a:hover{
+	background-color: #CFDEFF;
+    color: #267BB6;
+
+}
+
+.user-profile-div-fieldset {
+    margin-left:10px;
+    border:none;
+    width: 395px;
+}
+
+.user-profile-div-dd-input {
+
+}
+
+/** End - Profile Page Management Elements */
+
+/** PRJ - Project Tabs Management Elements */
+
+.proj-view-header{
+	font-size:13px;
+}
+.proj-view-fieldset{
+	width:100%;	
+	border:0px solid #f0f0f0;
+	margin-top:15px;
+}
+.proj-view-details{
+	position:relative;
+	min-height:248px;
+}
+.proj-view-details dt{
+	min-width: 110px;
+    color: #666666;
+    float: left;
+    font-weight: bold;
+    margin-bottom: 0.6em;
+    text-align: right;
+	word-wrap:break-word;
+	padding-left:90px;
+	padding-bottom:5px;
+}
+.proj-view-details dd{
+	margin-bottom: 5px;
+    margin-left: 210px;
+    position: relative;
+	min-height:25px;
+	max-width:500px;
+	word-wrap:break-word;
+}
+.proj-view-details select{
+	float:none;
+}
+.proj-view-message-fieldset{
+    border: 0 solid #DFDFDF;
+    margin-left: 0;
+    width: 670px;
+}
+.proj-view-message-dl{
+	margin-bottom: 0;
+    min-height: 30px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+.proj-view-message-dt{
+	float: left;
+    font-weight: bold;
+    min-height: 20px;
+    min-width: 140px;
+    word-wrap: break-word;
+}
+.proj-view-message-dd{
+	margin-left: 175px;
+    max-width: 560px;
+    min-height: 20px;
+    min-width: 300px;
+    text-align: left;
+    word-wrap: break-word;
+}
+.proj-view-message-info-wrap{
+	height: 35px;
+    line-height: 35px;
+    margin-left: 55px;
+    margin-top: -5px;
+    max-width: 120px;
+    overflow: hidden;
+    padding-top: 10px;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 120px;
+}
+.proj-view-message-display-date{
+	float: left;
+    font-size: 10px;
+    font-weight: normal;
+    max-width: 140px;
+    min-width: 120px;
+}
+.proj-view-message-subject{
+	font-size: 12px;
+    font-weight: bold;
+    line-height: 15px;
+    min-height: 15px;
+}
+.proj-view-message-content{
+	font-size: 14px;
+    line-height: 15px;
+    max-width: 430px;
+    min-height: 30px;
+}
+.proj-view-message-user-image{
+	margin-left: 5px;
+    margin-top: 5px;
+    max-height: 45px;
+    max-width: 45px;
+}
+.proj-view-message-user-label{
+	height:55px;
+	line-height:55px;
+}
+.proj-view-message-static{
+	clear: both;
+    margin-bottom: 14px;
+    margin-top: 5px;
+    min-height: 30px;
+}
+.proj-view-activities-table{
+	border-collapse: collapse;
+    border-spacing: 0;
+    font-size: 12px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+	width:100%;
+}
+.proj-view-activities-table thead{
+	height:30px;
+	background: #003896;
+	
+}
+.proj-view-activities-table th{
+    border:1px solid #F1F1F1;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-right: 2px;
+	height:20px;
+	border-radius: 5px 0 0 0;
+}
+
+.proj-view-activities-table td{
+	border: 1px solid #f1f1f1;
+    padding-left: 5px;
+	height:20px;
+    width: 95px;
+}
+.proj-view-activities-table td + td{
+	width:105px;
+}
+.proj-view-activities-table td + td + td{
+	width:170px;
+}
+.proj-view-activities-table td + td + td + td{
+	width:70px;
+}
+.proj-view-activities-table td + td + td + td + td{
+	width:70px;
+}
+
+/** End - Project Tabs Management Elements */
+
+/** CTM - Custom Page Management Elements **/
+
+.signUp-SP-header{
+	margin-left:-186px;
+	background-image:url("/default/images/background/header_new_bg.png");
+	padding:0px;
+	background-repeat:no-repeat;
+	height: 130px;
+	width: 1332px;
+	margin-bottom:30px;
+}
+
+/* SP Customizable CSS START */
+
+/* Header CSS START */
+
+/*Header Background*/
+/*
+.sp-head-top{
+	background-color: #fff;
+	color:#333;
+}
+
+.sp-head-menu{
+	background:#fff;
+}*/
+
+/* Header CSS END */
+
+/* Content CSS START */
+
+.sp-title{
+    color: #fff;
+    border-bottom: 0px solid #E8E8E8;
+	box-shadow:2px 2px 2px #000;
+    padding: 5px;
+	font-size:14px;
+	font-weight:bold;
+	border-radius:5px;
+	background: #003896; /* Old browsers */
+	background: -moz-linear-gradient(top, #006cdf 0%, #003896 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#01b5cc), color-stop(100%,#003896)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #006cdf 0%,#003896 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #006cdf 0%,#003896 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #006cdf 0%,#003896 100%); /* IE10+ */
+	background: linear-gradient(top, #006cdf 0%,#003896 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#006cdf', endColorstr='#003896',GradientType=0 ); /* IE6-8 */
+
+}
+
+/* Content CSS END */
+
+/* SP Customizable CSS END */
+
+
+
+/* SP Static Header CSS START */
+
+.sp-head-top{
+	padding:0px;
+	height: 84px;
+	width:100%;
+}
+.sp-head{
+    width: 100%;
+    background: #fff;
+    position: relative;
+	height:84px;
+	margin-top:0px;
+}
+
+.sp-head-top-central{
+    margin: auto;
+    width:	990px;
+}
+.sp-header-simple-logout{
+	text-align:left;
+	cursor:pointer;
+}
+.sp-header-simple-logout:hover{
+	color:#003896;
+	text-decoration:underline;
+}
+.sp-head-client-logo{
+	width:210px;
+	font-size:22px;
+	font-weight:bold;
+	color:white;
+	float:left;
+	padding-top:0px;
+	margin-top:15px;
+}
+.sp-custom-headerLogoImg{
+	max-height:55px;
+}
+.sp-custom-loginImg{
+	max-height:190px;
+	max-width: 595px;
+}
+.sp-head-top-center-user{
+	float: right;
+    font-size: 12px;
+    margin-right: -5px;
+    margin-top: 15px;
+    min-height: 50px;
+    min-width: 200px;
+}
+
+.sp-head-top-userprofile-picture{
+	box-shadow: 3px 2px 2px #333333;
+    float: right;
+    max-height: 50px;
+    max-width: 50px;
+}
+.sp-head-greeting{
+    float: right;
+    font-weight: bold;
+    padding-right: 15px;
+	padding-top:5px;
+}
+.sp-header-button-wrapper{
+    width: 85px;
+	margin-left:65px;
+}
+.sp-header-simple-button-wrapper{
+    width: 80px;
+	margin-left:65px;
+	margin-top:25px;
+}
+.sp-head-menu{
+	background-repeat:repeat-x;
+	position: relative;
+	margin-bottom:0px;
+	height:41px;
+}
+.sp-header-liner{
+	background-image:url("/default/images/background/head_liner_bg.png");
+	padding:0px;
+	height:50px;
+	width:100%;
+	margin-bottom:0px;
+	margin-top:0px;
+}
+.sp-profileLink{
+	cursor:pointer;
+}
