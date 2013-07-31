@@ -114,10 +114,11 @@
 
 /* Dialog
 ----------------------------------*/
-.ui-dialog { position: relative;  width: 300px; padding-top:15px; /*background:url("/default/images/background/popup_bg.png") repeat-x;*/background:#fff;  border:0px !important; }
+.ui-dialog { position: absolute;  width: 300px; padding-top:15px; /*background:url("/default/images/background/popup_bg.png") repeat-x;*/background:#fff;  border:0px !important; }
 .ui-dialog .ui-dialog-titlebar { 
 	color:#fff;
 	background: #003896; /* Old browsers */
+    background: -ms-linear-gradient(top, #006cdf 0%, #003896 100%); /* IE9.0+ */
 	background: -moz-linear-gradient(top, #006cdf 0%, #003896 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#01b5cc), color-stop(100%,#003896)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #006cdf 0%,#003896 100%); /* Chrome10+,Safari5.1+ */
@@ -130,7 +131,7 @@
 margin-bottom:10px; margin-left:15px;margin-right:15px;
 
 padding: .8em .3em .3em 1em; position: relative; height:30px;}
-.ui-dialog .ui-dialog-title { color:#fff; float: left;  font-size:22px; font-weight:bold;line-height:25px; word-wrap : normal ;} 
+.ui-dialog .ui-dialog-title { color:#fff; float: left;  font-size:16px; font-weight:bold;line-height:25px; word-wrap : normal ;} 
 .ui-dialog .ui-dialog-titlebar-close { position: absolute; right: 0em; top: 50%; width: 19px; margin: -10px 0 0 0; padding: 0px; height: 0px; }
 .ui-dialog .ui-dialog-titlebar-close span { display: block; margin: 1px 1px 1px -8px; }
 .ui-dialog .ui-dialog-titlebar-close:hover, .ui-dialog .ui-dialog-titlebar-close:focus { padding: 0; }
@@ -138,7 +139,7 @@ padding: .8em .3em .3em 1em; position: relative; height:30px;}
 .ui-dialog .ui-dialog-buttonpane {
 margin: 0; 
 padding: 5px 1em 12px .4em; 
-border-radius:0px 0px 10px 10px;
+border-radius:0px 0px 5px 5px;
 
 background:#cfcfcf;
 border-top:1px solid #a7a7a7;
@@ -154,20 +155,22 @@ background-color: #868686;
 color:#FFFFFF; font-weight:bold; 
 font-size:14px; 
 float:right; 
-margin: .5em 0 .5em 1em;
+margin: .5em 0 .5em 0; 
 cursor: pointer; 
 padding: 9px 28px; 
 line-height: 1.4em; 
 width:auto; 
 overflow:visible; 
 font-family:helvetica,arial,sans-serif;
+border: 0px; 
+border-radius:0 0 0 0;
 }
 .ui-dialog .ui-resizable-se { width: 20px; height: 20px; right: 3px; bottom: 3px; }
 .ui-draggable .ui-dialog-titlebar { cursor: move; }
 .ui-dialog .ui-dialog-buttonpane .ui-state-focus { background: #555555 }
-.ui-dialog-button-next {background:url(../images/buttons/popup-next-button.png) no-repeat; height:30px; width:77px;}
-.ui-dialog-button-previous {background:url(../images/buttons/popup-previous-button.png) no-repeat; height:30px; width:77px;}
-/*.ui-dialog-button-submit {background:url(../images/buttons/popup-submit-button.png) no-repeat; height:30px; width:77px;}*/
+.ui-dialog-button-next {background:url(/default/images/buttons/popup-next-button.png) no-repeat; height:30px; width:77px;}
+.ui-dialog-button-previous {background:url(/default/images/buttons/popup-previous-button.png) no-repeat; height:30px; width:77px;}
+.ui-dialog-button-submit {background:url(/default/images/buttons/popup-submit-button.png) no-repeat; height:30px; width:77px;}
 
 /* Progressbar
 ----------------------------------*/
@@ -209,7 +212,7 @@ font-family:helvetica,arial,sans-serif;
 /* Tabs
 ----------------------------------*/
 .ui-tabs { padding: .2em; zoom: 1; min-height:325px;}
-.ui-tabs .ui-tabs-nav { list-style: none; position: relative; padding: 0 0 0 0; border-radius: 5px 0 0 0; }
+.ui-tabs .ui-tabs-nav { list-style: none; position: relative; padding: 0 0 0 0; border-radius: 5px 0 0 0;margin-bottom:-1px;}
 .ui-tabs .ui-tabs-nav li { 
 	border: 1px solid #D0d0d0;
     border-radius: 5px 5px 0 0;
@@ -235,13 +238,13 @@ font-family:helvetica,arial,sans-serif;
 
 .ui-tabs .ui-tabs-nav li a, .ui-tabs.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-selected a { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
 .ui-tabs .ui-tabs-panel { 
-	border-left: 1px solid #D0D0D0;
+    border: 1px solid #dfdfdf;
     border-radius: 0 10px 10px 10px;
-    box-shadow: 5px 5px 5px #666666;
     cursor: default;
     display: block;
-
+    min-height: 340px;
     padding: 15px 15px 15px 15px;
+    background-color:#fff;
 }
 .ui-tabs .ui-tabs-hide { display: none !important; }
 
@@ -273,7 +276,7 @@ font-family:helvetica,arial,sans-serif;
 -webkit-border-top-left-radius: 4px !important;
 -webkit-border-top-right-radius: 4px !important;	
 -moz-border-radius: 4px 4px 0px 0px !important/*{cornerRadius}*/;
-/*background-image:  url(images/bt-win.png)/*{bgImgUrlHeader}*/
+/*background-image:  url(images/bt-win.png)/*{bgImgUrlHeader}*/ ;*/
 border-bottom:1px solid #fff;
 color: #4A86BD/*{fcHeader}*/;  }
 .ui-widget-header a { color: #222222/*{fcHeader}*/; }
@@ -290,7 +293,8 @@ color: #4A86BD/*{fcHeader}*/;  }
 	background: linear-gradient(top, #5dadfb 0%,#0067c9 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5dadfb', endColorstr='#0067c9',GradientType=0 ); /* IE6-8 */	
 	border: 0px solid #d3d3d3; 
-	font-weight: bold/*{fwDefault}*/;
+	/*background: url(/default/images/background/form-tab-bg_light.png);/*#e6e6e6/*{bgColorDefault}*/ /*url(images/ui-bg_glass_75_e6e6e6_1x400.png)/*{bgImgUrlDefault}*/ 0/*{bgDefaultXPos}*/ 50%/*{bgDefaultYPos}*/ repeat-x/*{bgDefaultRepeat}*/; 										
+	font-weight: bold/*{fwDefault}*/; 
 	color: #fff; 
 	outline: none; 
 	margin-bottom: 5px;
@@ -307,7 +311,7 @@ color: #4A86BD/*{fcHeader}*/;  }
 	outline: none; 
 	
 	}
-.ui-state-hover .ui-tabs {background:url(../images/background/form-tab-bg-hover.png);}
+.ui-state-hover .ui-tabs {background:url(/default/images/background/form-tab-bg-hover.png);}
 .ui-state-hover a, .ui-state-hover a:hover {  color: #fff/*{fcHover}*/; text-decoration: none; outline: none; 
 
    -webkit-stroke-width: 5.3px;
@@ -321,7 +325,7 @@ color: #4A86BD/*{fcHeader}*/;  }
 
 
 }
-
+.ui-state-active, .ui-widget-content .ui-state-active { background:#fff; border: 1px solid #cecece/*#aaaaaa/*{borderColorActive}*/; /*url(/default/images/background/form-tab-bg-active.png);*/ /*#e6e5e5*//*{bgColorActive}*/ /*url(images/ui-bg_glass_65_ffffff_1x400.png)/*{bgImgUrlActive}*/ 0/*{bgActiveXPos}*/ 50%/*{bgActiveYPos}*/ repeat-x/*{bgActiveRepeat}*/; font-weight: bold/*{fwDefault}*/; color: #212121/*{fcActive}*/; outline: ; }
 .ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited { font-weight:bold;color: #003896/*{fcActive}*/; outline: none; text-decoration: none; }
 
 /* Interaction Cues
@@ -347,6 +351,10 @@ color: #4A86BD/*{fcHeader}*/;  }
 .ui-state-active .ui-icon {background-image: url(https://s3.amazonaws.com/icons.noosh.com/noosh_icon_set.png)/*{iconsActive}*/; }
 .ui-state-highlight .ui-icon {background-image: url(https://s3.amazonaws.com/icons.noosh.com/noosh_icon_set.png)/*{iconsHighlight}*/; }
 .ui-state-error .ui-icon, .ui-state-error-text .ui-icon {background-image: url(https://s3.amazonaws.com/icons.noosh.com/noosh_icon_set.png)/*{iconsError}*/; }
+
+.ui-icon1, .ui-icon1 a:hover{
+	width:20px; height:20px; background-image: url(/default/images/icons/noosh_icon_set.png);
+}
 
 /* positioning */
 .ui-icon-carat-1-n { background-position: 0 0; }
@@ -447,7 +455,6 @@ color: #4A86BD/*{fcHeader}*/;  }
 .ui-icon-calculator { background-position: -112px -112px; }
 .ui-icon-zoomin { background-position: -128px -112px; }
 .ui-icon-zoomout { background-position: -144px -112px; }
-.ui-icon-search { background-position: -160px -112px; }
 .ui-icon-wrench { background-position: -176px -112px; }
 .ui-icon-gear { background-position: -192px -112px; }
 .ui-icon-heart { background-position: -208px -112px; }
@@ -539,9 +546,60 @@ color: #4A86BD/*{fcHeader}*/;  }
 .ui-icon-edit:hover{
 	background-position: -154px 212px;
 }
-
+.ui-icon-mail-inbox{
+	background-position: -82px -44px;
+}
+.ui-icon-mail-inbox:hover{
+	background-position: -82px 177px;
+}
+.ui-icon-mail-write{
+	background-position: 27px -190px;
+}
+.ui-icon-mail-write:hover{
+	background-position: 27px 31px;
+}
 .ui-icon-closethick:hover { 
 	background-position: 26px 64px !important;
+}
+.ui-icon-upload{
+	background-position: -46px -118px;
+}
+
+.ui-icon-upload:hover{
+	background-position: -46px 103px;
+}
+.ui-icon-inline-edit{
+	background-position: -151px -6px;
+	height: 25px;
+	width:25px;
+	opacity:0;
+}
+.ui-icon-inline-edit:hover{
+	background-position: -151px 215px;
+}
+.ui-icon-addUser{
+	background-position: -11px -190px;
+}
+.ui-icon-addUser:hover{
+	background-position: -11px 31px;
+}
+.ui-icon-config{
+    background-position: -298px -10px;
+}
+.ui-icon-config:hover{
+    background-position: -298px 211px;
+}
+.ui-icon-view{
+    background-position: -263px -9px;
+}
+.ui-icon-view:hover{
+    background-position: -263px 212px;
+}
+.ui-icon-minimize{
+	background-position: -82px -190px;
+}
+.ui-icon-minimize:hover{
+	background-position: -82px 31px;
 }
 /*
 .ui-datepicker-trigger{
@@ -563,7 +621,7 @@ color: #4A86BD/*{fcHeader}*/;  }
 .ui-corner-bottom { -moz-border-radius-bottomleft: 4px/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 4px/*{cornerRadius}*/; -moz-border-radius-bottomright: 4px/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 4px/*{cornerRadius}*/; }
 .ui-corner-right {  -moz-border-radius-topright: 4px/*{cornerRadius}*/; -webkit-border-top-right-radius: 4px/*{cornerRadius}*/; -moz-border-radius-bottomright: 4px/*{cornerRadius}*/; -webkit-border-bottom-right-radius: 4px/*{cornerRadius}*/; }
 .ui-corner-left { -moz-border-radius-topleft: 4px/*{cornerRadius}*/; -webkit-border-top-left-radius: 4px/*{cornerRadius}*/; -moz-border-radius-bottomleft: 4px/*{cornerRadius}*/; -webkit-border-bottom-left-radius: 4px/*{cornerRadius}*/; }
-.ui-corner-all { -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/; }
+.ui-corner-all { -moz-border-radius: 4px/*{cornerRadius}*/; -webkit-border-radius: 4px/*{cornerRadius}*/; border-radius:5px;}
 
 /* Overlays */
 .ui-widget-overlay { background: #000/*{bgColorOverlay}*/ none/*{bgImgUrlOverlay}*/ 0/*{bgOverlayXPos}*/ 0/*{bgOverlayYPos}*/ repeat-x/*{bgOverlayRepeat}*/; opacity: .8;filter:Alpha(Opacity=80)/*{opacityOverlay}*/; }

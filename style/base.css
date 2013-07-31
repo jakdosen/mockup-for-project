@@ -48,7 +48,7 @@ a{
 }
 
 .nsh-divider {
-	background-image: -moz-linear-gradient(left center , rgb(249, 249, 249) 0%, rgb(201, 201, 201) 50%, rgb(249, 249, 249) 99%);
+	background-image: -moz-linear-gradient(left center , rgb(249, 249, 249) 0%, rgb(201, 201, 201) 50%, rgb(249, 249, 249) 99%) repeat scroll 0% 0% transparent;
 	height:1px;
 }
 
@@ -59,7 +59,7 @@ a{
 }
 
 .head-top {
-	background-image:url("images/background/header_bg.png");
+	background-image:url("/default/images/background/header_bg.png");
 	padding:0px;
 	background-repeat:repeat-x;
 	height: 50px;
@@ -94,32 +94,32 @@ a{
 }
 
 .head-account-button{
-	background-image:url(images/buttons/accountinfo_button_mini.png);
+	background-image:url(/default/images/buttons/accountinfo_button_mini.png);
 float:right;
 	width:87px;
 	height:18px;
 }
 
 .head-account-button:hover{
-	background-image:url(images/buttons/accountinfo_button_miniover.png);
+	background-image:url(/default/images/buttons/accountinfo_button_miniover.png);
 }
 
 .head-logout-button{
-	background-image:url(images/buttons/logout_button_mini.png);
+	background-image:url(/default/images/buttons/logout_button_mini.png);
 float:right;
 	width:75px;
 	height:18px;
 }
 
 .head-logout-button:hover{
-	background-image:url(images/buttons/logout_button_miniover.png);
+	background-image:url(/default/images/buttons/logout_button_miniover.png);
 }
 	
 
 .head-menu {
 	/*background: #F8F8F8;
 	border-bottom-color: #BCC8D1;*/
-	background-image:url("images/background/nav_menu_bg.png");
+	background-image:url("/default/images/background/nav_menu_bg.png");
 	background-repeat:repeat-x;
 	position: relative;
 	margin-bottom:30px;
@@ -208,7 +208,7 @@ float:right;
  
 .foot-center-logo {
 	float:left;
-	background-image:url("images/logos/client_noosh.png");
+	background-image:url("/default/images/logos/client_noosh.png");
 	height:39px;
 	width:140px;
 	margin-top: 8px;
@@ -217,7 +217,7 @@ float:right;
 
 .foot-service-logo {
 	float:left;
-	background-image:url("images/logos/noosh_footer_default.png");
+	background-image:url("/default/images/logos/noosh_footer_default.png");
 	background-repeat:no-repeat;
 	height:20px;
 	width:94px;
@@ -494,11 +494,11 @@ dl.com-top-detail-dl-sub dd{
 
 /******* superfish *******/
 .menu-item-normal{
-	background: url("img/home/normal.png");
+	background: url("images/normal.png");
 }
 
 .menu-item-hover{
-	background: url("img/home/hover.png");
+	background: url("images/hover.png");
 }
 
 /******* superfish *******/
@@ -507,7 +507,7 @@ dl.com-top-detail-dl-sub dd{
 ul.menu-ul{
 	margin: 0;
 	padding: 0;
-	background-image:url(images/background/nav_menu_bg.png);
+	background-image:url(/default/images/background/nav_menu_bg.png);
 	height: 36px;
 	width: 650px;
 	float: left;
@@ -537,7 +537,7 @@ li.menu-first{
 	display: inline-block;
 	list-style: none;
 	float: left;
-	/*background: url("images/normal-small.png");*/
+	/*background: url("/default/images/normal-small.png");*/
 	padding: 10px 12px 10px 12px;
 	min-width: 60px;
 	padding-left: 5px;
@@ -547,9 +547,9 @@ li.menu-first{
 li.menu-first:hover{
 	color: #00C;
 	font-weight:bold;
-	background-image:url(images/background/nav_menu_mouseover_simple.png);
-	/*background-image:url(images/nav_menu_bg_mouseover.png);*/
-	/*background: url("images/hover-small.png");*/
+	background-image:url(/default/images/background/nav_menu_mouseover_simple.png);
+	/*background-image:url(/default/images/nav_menu_bg_mouseover.png);*/
+	/*background: url("/default/images/hover-small.png");*/
 }
 
 
@@ -604,7 +604,7 @@ margin-left:3px;
 }
 
 .createJob-fieldset-preview-dl{
-    margin-top: 10px;
+    margin-top: 10p;
 }
 
 .createJob-fieldset-preview-dl  dt{

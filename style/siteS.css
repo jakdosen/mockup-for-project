@@ -16,13 +16,16 @@ a.com-menu-selected{
 /* Header CSS START */
 
 /*Header Background*/
+.sp-head{
+	background-color:#f1f1f1;
+}
 .sp-head-top{	
 	background-color: #fff; /*Header Background*/
 	color:#333; /*Header Text*/
 }
 
 .sp-head-menu{
-	background:#fff; /*Menu Background*/
+	background:none; /*Menu Background*/
 }
 ul.com-menu-ul a{
 	color: #666; /*Menu Text*/

@@ -2,8 +2,334 @@
 <html>
 <head>
     <title></title>
+    <link rel="stylesheet" type="text/css" href="../../style/site.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../style/siteS.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../style/uil71/ui.all.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../style/base.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="../../style/spNewHome.css" media="screen"/>
 </head>
 <body>
+   <h1>SERVICE PROVIDER VIEW</h1>
+   <div class="job-content">
+   <div class="job-tab-view ui-tabs ui-widget ui-widget-content ui-corner-all" id="job-tab-view9443887">
+   <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+       <li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active"><a href="#jobOverview9443887">Overview</a></li>
+       <li class="ui-state-default ui-corner-top"><a href="#jobSpecs9443887">Production Specs</a></li>
+       <li style="display:none;" class="ui-state-default ui-corner-top"><a href="#jobQuotes9443887">Quotes</a></li>
+       <li class="ui-state-default ui-corner-top"><a href="#jobFiles9443887">Files</a></li>
+       <li class="ui-state-default ui-corner-top"><a href="#jobMessages9443887">Messages</a></li>
+       <li class="ui-state-default ui-corner-top"><a href="#jobActivities9443887">Activities</a></li>
+   </ul>
 
+   <div id="jobOverview9443887" class="ui-tabs-panel ui-widget-content ui-corner-bottom">
+       <div><h2 class="proj-view-header">Project Overview</h2></div>
+       <div class="sp-simple-button" id="projectOverview-editButton9443887" style="width:85px;float:right;" projectid="9443887">Edit Project</div>
+       <fieldset class="proj-view-fieldset">
+           <dl class="proj-view-details">
+               <form id="projectInfoTab9443887">
+
+                   <dt>
+                       <label>Project Name*:</label>
+                   </dt>
+                   <dd class="site-projectOverview-report">
+                       <span display="none" id="jobInfoName9443887Label">project of sp1</span>
+                   </dd>
+                   <dd class="site-projectOverview-edit">
+                       <input type="text" id="jobInfoName9443887" value="project of sp1" class="site-projectOverview-controll" style="width:280px" name="jobInfoName">
+                   </dd>
+
+                   <dt>
+                       <label>Workspace:</label>
+                   </dt>
+                   <dd>
+                       <div class="clearfix">
+                           <span style="float:left;"><a npr="1" class="job-quote-link" href="/service/site/5003785?mdu=Group-SP-ProjectTabs">WS to Test invite</a></span>
+                       </div>
+                   </dd>
+
+                   <div id="projectCategoryDiv9443887" style="display:none">
+                       <dt>
+                           <label>Project Category:</label>
+                       </dt>
+                       <dd class="site-projectOverview-report">
+                           <span display="none" id="projectCategory9443887Label"></span>
+                       </dd>
+                       <dd class="site-projectOverview-edit">
+                           <select name="selectedProjectCategoryId" id="projectCategorySelect9443887" projectid="9443887">
+                               <option value="-1">No category</option>
+
+                           </select>
+                       </dd>
+                   </div>
+
+                   <dt>
+                       <label>Noosh Project ID:</label>
+                   </dt>
+                   <dd>
+                       <label>9443887</label>
+                       <input type="hidden" value="9443887" name="pmProjectId">
+                   </dd>
+
+                   <dt>
+                       <label>Project Number:</label>
+                   </dt>
+                   <dd>
+                       <label>9443887</label>
+                       <input type="hidden" value="" name="projectNumber">
+                   </dd>
+
+                   <dt>
+                       <label>Completion Date:</label>
+                   </dt>
+                   <dd class="site-projectOverview-report">
+        <span id="projectDatePicker9443887Label">
+
+                 &nbsp;
+
+        </span>
+                   </dd>
+                   <dd class="site-projectOverview-edit">
+                       <input type="text" class="com-completion-date-field site-projectOverview-controll hasDatepicker" id="projectDatePicker9443887" value="" name="jobInfoCompletionDate" readonly="readonly"><img class="ui-datepicker-trigger" src="/default/images/icons/calendar.png" alt="..." title="...">
+                   </dd>
+
+                   <dt>
+                       <label>Description:</label>
+                   </dt>
+                   <dd class="site-projectOverview-report">
+                       <span id="jobInfoDescription9443887Label"></span>
+                   </dd>
+                   <dd class="site-projectOverview-edit">
+                       <textarea rows="2" cols="40" class="site-projectOverview-controll" value="" style="width:350px" name="jobInfoDescription" id="jobInfoDescription9443887"></textarea>
+                   </dd>
+
+                   <dt>
+                       <label>Project Status:</label>
+                   </dt>
+                   <dd class="site-projectOverview-report">
+                       <span display="none" id="projectStatus9443887Label">New</span>
+                   </dd>
+                   <dd class="site-projectOverview-edit">
+                       <select name="pmProjectStatusId" id="projectStatusSelect9443887" projectid="9443887">
+                           <option value="5126835" selected="">New</option>
+
+                           <option value="5126836">Project Reviewed</option>
+
+                           <option value="5126837">Quoted</option>
+
+                           <option value="5126838">Ordered</option>
+                       </select>
+                   </dd>
+
+                   <input type="hidden" name="nlJobRequestId" id="nlJobRequestId9443887" value="5005581">
+                   <input type="hidden" name="pmProjectSdId" id="pmProjectSdId9443887" value="9441194">
+                   <input type="hidden" name="statusChanged" id="statusChanged9443887" value="false">
+                   <input type="hidden" name="projectStatus" id="projectStatus9443887" value="New">
+                   <input type="hidden" name="customFieldsJsonStr" id="customFieldsJsonStr9443887" value="">
+               </form>
+
+           </dl>
+       </fieldset>
+
+       <div class="proj-view-button-wrapper">
+           <div class="glb-simple-cancel" id="projectOverview-cancelButton9443887" projectid="9443887" style="display:none;width:50px;float:left;">
+               Cancel			</div>
+           <div class="sp-simple-button" id="projectUpdate9443887" style="display:none;width:55px;float:left;" projectid="9443887">Update</div>
+       </div>
+
+       <span id="updateMsg9443887" class="glb-show-name-msg"></span>
+       <div style="clear:both;"></div>
+   </div>
+
+   <div id="jobSpecs9443887" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+       <div style="margin-bottom:10px;">
+           <ul class="job-jobSpecs-div-ul">
+
+               <li class="job-jobSpecs-div-li" id="jobSpecDivLi7972190">
+                   <div class="project-products-name">project of sp1</div>
+                   <div style="" ><ul id="inlineEditProductError7972190" class="inline-edit-product-error" productid="7972190"></ul><a id="inlineEditProductEdit7972190" class="inline-edit-product-edit" productid="7972190">Edit</a><a id="inlineEditProductCancel7972190" class="inline-edit-product-cancel" productid="7972190" style="display: none;">Cancel</a><a id="inlineEditProductSave7972190" class="inline-edit-product-save" productid="7972190" style="display: none;">Save</a><fieldset class="create-project-review-fieldset"><fieldset class="create-project-review-specs-tab" id="DzzBJkg0o5c0"><legend>Request Details</legend><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"><div id="MvtX2ELko5c0" class="pe-dd-cellCard clearfix" style="background-color:CadetBlue;" type="label"><div class="pe-dd-cellCard-head pe-head-labelLeft" style="width:0;"></div><div class="pe-dd-cellCard-body pe-body-labelLeft" style="width:100%;padding-top:5px;"><input type="text" class="pe-dd-cellCard-edit" value="Project Details"><span class="pe-dd-cellCard-label" style="color: white; font-weight: bold;">Project Details</span></div></div></li></ul><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"><div id="Gr3LapIko5c0" class="pe-dd-cellCard clearfix" style="background-color:;" type="select" elementtype="select"><div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text" class="pe-dd-cellCard-edit" value="Site Design Type"><span class="pe-dd-cellCard-label" style="color: black; font-weight: bold;">Site Design Type</span><span class="pe-dd-cellCard-required"></span></div><div class="pe-dd-cellCard-body pe-body-labelLeft"><select id="Gr3LapIko5c0triggerOption" class="pe-dd-cellCard-valueEdit pe-dd-cellCard-select" style="float: left; display: none;"><option value="zpI5bvi8A7" selected="">Corporate Website</option><option value="0lhfZfm0fS">Blog</option><option value="Wiy75NTUKz">eNewsletter</option><option value="I8f3rI0D9q">Site Re-design</option></select><span class="pe-dd-cellCard-valueShown" style="vertical-align: top; display: inline;">Corporate Website</span><img id="Gr3LapIko5c0associatedImg" class="pe-dd-cellCard-selectImage" style="margin-left:10px;max-height:50px;max-width:50px;visibility:hidden;"></div></div></li></ul><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"><div id="8y3cn8sLo5c0" class="pe-dd-cellCard clearfix" style="background-color:;" type="select" elementtype="select"><div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text" class="pe-dd-cellCard-edit" value="Technology"><span class="pe-dd-cellCard-label" style="color: black; font-weight: bold;">Technology</span><span class="pe-dd-cellCard-required"></span></div><div class="pe-dd-cellCard-body pe-body-labelLeft"><select id="8y3cn8sLo5c0triggerOption" class="pe-dd-cellCard-valueEdit pe-dd-cellCard-select" style="float: left; display: none;"><option value="gg80fquCdJ" selected="">HTML5</option><option value="RyJme4nb9o">Flash</option><option value="tfSdpTe6QP">Ruby on Rails</option><option value="XTNGl287Xk">Mobile</option><option value="qBpn01XOfa">Tablet</option></select><span class="pe-dd-cellCard-valueShown" style="vertical-align: top; display: inline;">HTML5</span><img id="8y3cn8sLo5c0associatedImg" class="pe-dd-cellCard-selectImage" style="margin-left:10px;max-height:50px;max-width:50px;visibility:hidden;"></div></div></li></ul><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"><div id="fr9h5TOho5c0" class="pe-dd-cellCard clearfix" style="background-color:;" type="select" elementtype="select"><div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text" class="pe-dd-cellCard-edit" value="Target Market"><span class="pe-dd-cellCard-label" style="color: black; font-weight: bold;">Target Market</span><span class="pe-dd-cellCard-required"></span></div><div class="pe-dd-cellCard-body pe-body-labelLeft"><select id="fr9h5TOho5c0triggerOption" class="pe-dd-cellCard-valueEdit pe-dd-cellCard-select" style="float: left; display: none;"><option value="pZaEKZWdRM" selected="">Health</option><option value="RbQErqcgXc">Business</option><option value="hFshkES3c2">Tech</option><option value="QBlq0K2Tvu">Non-Profit</option><option value="rXXqZTuihG">Other</option></select><span class="pe-dd-cellCard-valueShown" style="vertical-align: top; display: inline;">Health</span><img id="fr9h5TOho5c0associatedImg" class="pe-dd-cellCard-selectImage" style="margin-left:10px;max-height:50px;max-width:50px;visibility:hidden;"></div></div></li></ul><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"><div id="VAlrISiso5c0" class="pe-dd-cellCard clearfix" style="background-color:;" type="textarea"><div class="pe-dd-cellCard-head pe-head-labelLeft"><input type="text" class="pe-dd-cellCard-edit" value="Content Overview"><span class="pe-dd-cellCard-label" style="color: black; font-weight: bold;">Content Overview</span><span class="pe-dd-cellCard-required"></span></div><div class="pe-dd-cellCard-body pe-body-labelLeft"><textarea class="pe-dd-cellCard-value pe-dd-cellCard-valueEdit" cols="55" rows="3" style="resize: none; display: none;"></textarea><span class="pe-dd-cellCard-valueShown" style="display: inline;"></span></div></div></li></ul><ul class="pe-create-cells clearfix"><li class="pe-create-cell" style="width:644px;"></li></ul></fieldset></fieldset></div>
+               </li>
+
+           </ul>
+       </div>
+       <div style="clear:both;"></div>
+   </div>
+
+
+   <div id="jobQuotes9443887" style="display:none;" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+       <div>
+           <h2 class="job-panel-body-jobs-job-h2">Current Quotes</h2>
+           <h2 style="float:right;margin-right:10px;color:red;display:none;">MOCKUP DATA</h2>
+       </div>
+
+       <a id="newQuoteTop">new quote</a>
+
+       <div class="project-quote-table-wrapper">
+           <table id="buyerQuotesTable" class="sp-quotes-table">
+               <thead>
+               <tr>
+                   <th>Title</th>
+                   <th>Status</th>
+                   <th>Price</th>
+                   <th>Date of Submission</th>
+               </tr>
+               </thead>
+               <tbody>
+               <tr>
+                   <td><a quoteid="" id="viewQuoteLink9443887"><div id="projQuote9443887" pid="9443887" class="quote-link">Poster Campaign</div></a></td>
+                   <td>Active</td>
+                   <td class="quoteCurrency">5000</td>
+                   <td>10/10/10</td>
+               </tr>
+               </tbody>
+           </table>
+       </div>
+       <fieldset style="clear:both;display:none;">
+           <dl class="job-jobQuotes-quotes-dl">
+               <dt>Order Title:</dt>
+               <dd>303343</dd>
+               <dt>Order Completion Date:</dt>
+               <dd>05/30/2012</dd>
+               <dt>Spec Information:</dt>
+               <dd>
+                   <table class="job-common-table job-jobQuotes-fieldset-table">
+                       <tbody><tr>
+                           <td>&nbsp;</td>
+                           <td>Quantity</td>
+                           <td>Price</td>
+                           <td>Completion Date</td>
+                           <td>Note</td>
+                       </tr>
+                       <tr>
+                           <td>
+                               Poster<br>
+                               Paper Type: 10#<br>
+                               Coverage: Medium<br>
+                               Ink: FFDFS
+                           </td>
+                           <td>
+                               1000
+                           </td>
+                           <td>
+                               $2000
+                           </td><td>
+                           5/20/2012
+                       </td><td>
+                           &nbsp;
+                       </td>
+                       </tr>
+                       <tr>
+                           <td>
+                               Poster<br>
+                               Paper Type: 10#<br>
+                               Coverage: Medium<br>
+                               Ink: FFDFS
+                           </td>
+                           <td>
+                               1000
+                           </td>
+                           <td>
+                               $2000
+                           </td><td>
+                           5/20/2012
+                       </td><td>
+                           &nbsp;
+                       </td>
+                       </tr>
+                       </tbody></table>
+               </dd>
+           </dl>
+       </fieldset>
+   </div>
+
+
+
+   <div id="jobFiles9443887" class="ui-tabs-panel ui-widget-content ui-corner-bottom clickable ui-tabs-hide"><div style="border:2px dashed #dfdfdf;border-radius:5px;"><div class="upload-drop-zone-container" style="width:240px;margin-left:auto;margin-right:auto;height:100px;margin-top:20px;"><div class="upload-drop-zone-text-wrapper"><div style="text-align:center;font-size:18px;font-weight:bold;color:#666;margin-bottom:5px;">Upload Files</div><div class="upload-drop-zone-header-text" style="font-size:18px;color:#dfdfdf;">Drag files here</div><div class="upload-drop-zone-header-text" style="font-size:16px;color:#dfdfdf;">or</div><button class="drop-upload-file-button" id="upload-drop-button-1">Select files from your computer</button></div></div><div id="upload-drop-zone-1" class="dropzone"></div></div><table id="file-list-1" class="drop-upload-cot" style="table-layout:fixed"><thead><tr><th class="first" style="width:20%">Preview</th><th class="sort-alpha" style="width:25%"><a href="javascript:;" class="icon icon-sort">Name</a></th><th class="sort-alpha" style="width:12%"><a href="javascript:;" class="icon icon-sort">Type</a></th><th class="sort-alpha" style="width:16%"><a href="javascript:;" class="icon icon-sort">Uploaded By</a></th><th class="sort-alpha" style="width:16.5%"><a href="javascript:;" class="icon icon-sort">Uploaded On</a></th><th class="last"></th></tr></thead><tbody id="file-tbody-1" class="file-upload-table-body"></tbody></table>
+
+
+       <div class="job-file-list" style="width:98%;">
+
+           <div id="uploadedFilesDom9443887">
+               <ul id="uploadeds9443887" class="uploaded-files">
+               </ul>
+           </div>
+       </div>
+   </div>
+
+   <div id="jobMessages9443887" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+       <div>
+           <h2 class="job-panel-body-jobs-job-h2">Project Related Messages</h2>
+       </div>
+       <fieldset style="margin-top:10px;" class="proj-view-message-fieldset">
+
+           <form id="projectMessageTab9443887">
+               <dl class="proj-view-message-static">
+                   <dt>
+                   <div style="min-height:30px;margin-bottom:5px;">
+                       <img style="float:left;" class="proj-view-message-user-image" src="https://s3.amazonaws.com/sqa.noosh.com/noosh/v1/person/5335594/profile">
+                       <p class="proj-view-message-user-label"><label style="padding-left:5px;">You</label></p>
+                   </div>
+                   </dt>
+                   <dd>
+                       <div>
+                           <a id="messageTabPost9443887" style="margin-left:10px;margin-top:3px;float:right;" projectid="9443887">
+                               <div class="sp-simple-button">Post Message</div>
+                           </a>
+                           <textarea rows="3" cols="52" name="content" id="content9443887" style="max-height:500px;max-width:430px;"></textarea>
+                       </div>
+                   </dd>
+                   <dt></dt>
+                   <dd class="site-projectOverview-dd-buttons">
+                       <span id="postMsg9443887" class="glb-show-name-msg"></span>
+                       <input type="hidden" name="projectId" value="9443887">
+                   </dd>
+               </dl>
+           </form>
+           <div style="clear:both"></div>
+           <div id="postedMessageDiv9443887" draft="0"></div>
+
+       </fieldset>
+   </div>
+
+   <div id="jobActivities9443887" class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-tabs-hide">
+       <div>
+           <h2 class="job-panel-body-jobs-job-h2">All Activities on this Project</h2>
+       </div>
+       <table class="proj-view-activities-table" id="jobActivitiesTable9443887">
+           <thead>
+           <tr>
+               <th>Event</th>
+               <th>Name</th>
+               <th>Posted To</th>
+               <th>Description</th>
+               <th>Date</th>
+           </tr>
+           </thead>
+           <tbody>
+
+
+
+
+
+
+           <tr>
+               <td>Spec Created</td>
+               <td>elena sp1</td>
+               <td>Elena</td>
+               <td>Spec Created</td>
+               <td>7/27/13 上午4:59:43</td>
+           </tr>
+
+           <tr>
+               <td>Project Created</td>
+               <td>elena sp1</td>
+               <td>Elena</td>
+               <td>Project Created</td>
+               <td>7/27/13 上午4:59:43</td>
+           </tr>
+           </tbody>
+       </table>
+   </div>
+   </div>
+   </div>
 </body>
 </html>

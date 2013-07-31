@@ -83,6 +83,7 @@
 	position: relative; 
 	padding: 5px 5px 0px 5px;
 	border-top:1px solid #dfdfdf;
+	background-color:#fff;
 }
 .ui-tabs .ui-tabs-nav li { 
 	background:#f1f1f1;
@@ -129,6 +130,7 @@
     min-height: 340px;
     padding: 10px;
 	z-index:1004;
+	background-color:#fff;
 }
 .ui-tabs .ui-tabs-hide { 
 	display: none !important; 
@@ -374,7 +376,15 @@
 .ui-icon-edit:hover{
 	background-position: -154px 212px;
 }
-
+.ui-icon-inline-edit{
+	background-position: -151px -6px;
+	height: 25px;
+	width:25px;
+	display:none;
+}
+.ui-icon-inline-edit:hover{
+	background-position: -151px 215px;
+}
 .ui-icon-closethick:hover { 
 	background-position: 26px 64px !important;
 }
@@ -396,6 +406,24 @@
 }
 .ui-icon-addUser:hover{
 	
+}
+.ui-icon-config{
+    background-position: -298px -10px;
+}
+.ui-icon-config:hover{
+    background-position: -298px 211px;
+}
+.ui-icon-minimize{
+	background-position: -82px -187px;
+}
+.ui-icon-minimize:hover{
+	background-position: -82px 34px;
+}
+.ui-icon-maximize{
+	background-position: -46px -187px;
+}
+.ui-icon-maximize:hover{
+	background-position: -46px 34px;
 }
 /* Misc visuals
 ----------------------------------*/
