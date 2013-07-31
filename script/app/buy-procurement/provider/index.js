@@ -30,25 +30,68 @@ define(function(require,exports){
         },
         initialize:function(){
             var parentView = this;
+            this.addedSupplier = [];
             var _View = this.SupplierView = Backbone.View.extend({
-                tagName:"div",
-                template: _.template("<span><%=name%> - <%=email%></span>"),
+                tagName:"li",
+                template: _.template("<div style='padding: 3px;background: <%print(isAdded?'#6FC6D1':'#FFF')%>' class='row-supplier'><span><%=name%> - <%=email%></span> \
+                    <a href='javascript:;' style='color: blue;text-decoration: underline' class='addUser <%if(isAdded){print('hide')}%>'>add</a>\
+                    <a href='javascript:;' style='color: blue;text-decoration: underline' class='removeUser <%if(!isAdded){print('hide')}%>'>remove</a>\
+                    <%if(!isSignUp){%>\
+                     - This is a new supplier,\
+                    <a href='javascript:;' style='color: blue;text-decoration: underline' class='inviteUser'>invite</a>\
+                     now\
+                    <%}%></div>\
+                    "),
+                events:{
+                    "click a.addUser":"addSupplier",
+                    "click a.removeUser":"removeSupplier",
+                    "click a.inviteUser":"inviteSupplier"
+                },
                 render:function(){
+                    this.model.set("isAdded",this.checkSupplier());
+                    var supplierData = this.model.toJSON();
+
                     this.$el.append(this.template(this.model.toJSON()));
+                    this.model.bind("change:isAdded",function(){
+                        var isAdded = this.model.get("isAdded");
+                        this.$el.find("a.addUser")[isAdded?"hide":"show"]();
+                        this.$el.find("a.removeUser")[!isAdded?"hide":"show"]();
+                        this.$el.find("div.row-supplier").css("background",(isAdded?'#6FC6D1':'#FFF'));
+                    },this);
                 },
                 initialize:function(){
                     this.render();
                     this.model.bind("destroy",this.remove,this);
+                },
+                checkSupplier:function(){
+                    var curSupplier = this.model.toJSON();
+                    return !!_.find(parentView.addedSupplier,function(supplierId){return curSupplier.id == supplierId});
+                },
+                addSupplier:function(){
+                    if(!this.checkSupplier()){
+                        parentView.addedSupplier.push(this.model.get("id"));
+                        this.model.set("isAdded",true);
+                    }
+                },
+                removeSupplier:function(){
+                    parentView.addedSupplier = _.without(parentView.addedSupplier,this.model.get("id"));
+                    this.model.set("isAdded",false);
+                },
+                inviteSupplier:function(){
+                    if(!this.model.get("isInvited")){
+                        ev.trigger("add.newFrame","supplier/sign-up.html?userId="+this.model.get('id'));
+                        this.model.set("isInvited",true);
+                    }
                 }
             });
-            this.suppliers = new (Backbone.Collection.extend({
+            this.searchSuppliers = new (Backbone.Collection.extend({
                 model:ItemModel,
                 initialize:function(){
                     this.bind("add",this.addOne,this);
                     this.bind("reset", this.addAll, this);
                 },
                 addOne:function(supplier){
-                    parentView.$el.find(".create-project-customer-input").append(new _View({model:supplier}).el);
+                    parentView.$el.find(".search-supplier-result").append(new _View({model:supplier}).el);
                 },
                 addAll:function () {
                     this.each(this.addOne) ;
@@ -69,7 +112,7 @@ define(function(require,exports){
                 if(findVal&&findVal.length){
 
                     this.$el.find(".create-project-client-email").show();
-                    this.suppliers.add(findVal);
+                    this.searchSuppliers.add(findVal);
                 }
             }
         },

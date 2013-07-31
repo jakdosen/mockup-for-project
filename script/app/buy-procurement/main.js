@@ -32,14 +32,23 @@ define(function(require,exports){
         }
     });
 
+
     initMain:{
         window.frames["provider"].location = "provider/index.html";
-        ev.bind("add.newSupplier",(function(){
+        ev.bind("add.newFrame",(function(){
             $('.container.resizable').resizable({
                 handles: 'n, w'
             });
             return arguments.callee;
         })());
+
+        ev.bind("add.newFrame",function(url){
+            $(document.body).append('\
+            <div class="container resizable">\
+                <iframe src="' + url + '"></iframe>\
+            </div>\
+            ');
+        });
     }
 
 });
