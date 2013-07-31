@@ -55,7 +55,7 @@
             var $sum = $("#sum"),
                 sum = $sum.val(),
                 cur = $sum.attr("cur");
-            cur && (sum = accounting.unformat(sum+" "+cur, Currency.settings[cur.toLowerCase()].decimal));
+            cur && (sum = Currency.reconvert(sum+" "+cur, cur));
             $sum.val(Currency.convert(sum,opt)).attr("cur",opt);
         },
         renderOne: function(item){

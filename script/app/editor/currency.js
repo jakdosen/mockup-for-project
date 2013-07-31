@@ -13,7 +13,7 @@
             inr : { symbol: "₹", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             cny : { symbol: "¥", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             hkd : { symbol: "$", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
-            aed : { symbol: "د.إ", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
+            aed : { symbol: "AED", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             thb : { symbol: "฿", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             idr : { symbol: "Rp", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             php : { symbol: "₱", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
@@ -22,7 +22,8 @@
             pkr : { symbol: "₨", precision: 2, thousand: ",", decimal: ".", format: "%s %v"},
             ngn : { symbol: "₦", precision: 2, thousand: ",", decimal: ".", format: "%s %v"}
         },
-        convert : function(sum,name){ return accounting.formatMoney(sum, this.settings[name.toLowerCase()]); }
-
+        convert : function(sum,cur){ return accounting.formatMoney(sum, this.settings[cur.toLowerCase()]); },
+        reconvert:function(sum,cur){ return accounting.unformat(sum, this.settings[cur.toLowerCase()].decimal); },
+        convertBatch:function(arr,cur){return accounting.formatColumn(arr, this.settings[cur.toLowerCase()]);}
     };
 });
