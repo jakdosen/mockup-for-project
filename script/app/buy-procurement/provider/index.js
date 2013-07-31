@@ -1,9 +1,6 @@
 /**
- * Created with JetBrains WebStorm.
  * User: Gavin.Li
  * Date: 7/31/13
- * Time: 10:14 AM
- * To change this template use File | Settings | File Templates.
  */
 define(function(require,exports){
     var
@@ -13,8 +10,16 @@ define(function(require,exports){
         Backbone = require("backbone"),
         ev = top.ev;
     require("jquery.ui");
-    $(".job-tab-view").tabs({ active: 2 });
 
+
+    var ItemModel = Backbone.Model.extend({
+        sync:function () {
+            return true;
+        },
+        clear:function () {
+            this.destroy();
+        }
+    });
     /**
      * EstimatePopupView
      * @type {*}
@@ -25,15 +30,48 @@ define(function(require,exports){
         },
         initialize:function(){
             var parentView = this;
-
-            this.suppliers = new (Backbone.Collection.extend({
+            var _View = this.SupplierView = Backbone.View.extend({
+                tagName:"div",
+                template: _.template("<span><%=name%> - <%=email%></span>"),
+                render:function(){
+                    this.$el.append(this.template(this.model.toJSON()));
+                },
                 initialize:function(){
-                    this.bind("add")
+                    this.render();
+                    this.model.bind("destroy",this.remove,this);
                 }
+            });
+            this.suppliers = new (Backbone.Collection.extend({
+                model:ItemModel,
+                initialize:function(){
+                    this.bind("add",this.addOne,this);
+                    this.bind("reset", this.addAll, this);
+                },
+                addOne:function(supplier){
+                    parentView.$el.find(".create-project-customer-input").append(new _View({model:supplier}).el);
+                },
+                addAll:function () {
+                    this.each(this.addOne) ;
+                }
+
             }));
         },
         searchSupplier:function(){
+            var
+                val = $.trim($("#customerNameorEmail").val()),
+                reg,
+                findVal;
+            if(val){
+                findVal = _.filter(data.supplier,function(supplier,key){
+                    reg = new RegExp(val,'i');
+                    return reg.test(supplier["name"])||reg.test(supplier["email"]);
+                });
+                if(findVal&&findVal.length){
 
+                    this.$el.find(".create-project-client-email").show();
+                    this.suppliers.add(findVal);
+                }
+            }
         },
         verify:function(){
 
@@ -59,8 +97,9 @@ define(function(require,exports){
         },
         initialize:function(){
 //            this.createEstimatePopupTPL =  require("./tpl/createEstimatePopup.tpl");
+            $(".job-tab-view").tabs({ active: 2 });
             this.createEstimatePopupTPL = $("#estimate-popup-tpl").html();
-            ev.bind("add.estimate",this.addEstimate,this);
+            try{ev.bind("add.estimate",this.addEstimate,this)}catch(e){};
         },
         createEstimate:function(){
             $(this.createEstimatePopupTPL).dialog({
