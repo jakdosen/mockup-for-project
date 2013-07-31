@@ -8,11 +8,11 @@
 define(function(require,exports){
     var
         root = this,
-/*        $ = require("jquery"),*/
+        $ = require("jquery"),
         _ = require("underscore"),
         Backbone = require("backbone"),
         ev;
-
+    require("jquery.ui");
     root.data = require("./data");
     /**
      * event center
@@ -34,12 +34,12 @@ define(function(require,exports){
 
     initMain:{
         window.frames["provider"].location = "provider/index.html";
-        ev.bind("open.supplier1",function(){
-            window.frames["supplier1"].location = "supplier/supplier1.html";
-        });
-        ev.bind("invite.supplier2",function(){
-            window.frames["supplier2"].location = "supplier/sign-up.html";
-        });
+        ev.bind("add.newSupplier",(function(){
+            $('.container.resizable').resizable({
+                handles: 'n, w'
+            });
+            return arguments.callee;
+        })());
     }
 
 });

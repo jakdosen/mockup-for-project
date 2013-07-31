@@ -2,18 +2,24 @@
 <html>
 <head>
     <title>buy-procurement</title>
-    <script src="../script/seajs/sea-debug.js"
-            data-config="app/config.js"
-            data-main="app/buy-procurement/main.js" id="seajsnode"></script>
+    <link rel="stylesheet" type="text/css" href="../style/jquery-ui/jquery-ui-1.10.3.custom.min.css" media="screen"/>
+    <style type="text/css">
+        *{padding: 0;margin: 0}
+        html,body{overflow-x: hidden;height: 100%}
+        iframe{width:80%;height: 100%;text-align: center;border: none}
+        iframe.widthScreen{width:100%;}
+        .container{width: 100%;position: relative;text-align: center}
+        .provider-container{height: 100%;}
+        .ui-resizable-handle{background: #eee}
+    </style>
 </head>
+     <body>
+         <div class="container provider-container">
+             <iframe name="provider" src="about:blank" class="widthScreen"></iframe>
+         </div>
 
-    <frameset rows="50%,50%">
-        <frame src="about:blank" name="provider"scrolling="auto"/>
-        <frameset cols="50%,50%">
-            <frame src="about:blank" name="supplier1" scrolling="auto"/>
-            <frame src="about:blank" name="supplier2" scrolling="auto"/>
-        </frameset>
-    </frameset>
-
-
+        <script src="../script/seajs/sea-debug.js"
+                data-config="app/config.js"
+                data-main="app/buy-procurement/main.js" id="seajsnode"></script>
+     </body>
 </html>

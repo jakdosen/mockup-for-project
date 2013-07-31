@@ -41,13 +41,23 @@ define(function (require, exports, module) {
             {
                 id:1,
                 name:"supplier1",
-                email:"sup1@sup1.com"
+                email:"sup1@sup1.com",
+                isSignUp:true
             },
             {
                 id:2,
                 name:"supplier2",
-                email:"sup2@sup2.com"
+                email:"sup2@sup2.com",
+                isSignUp:false
+            },
+            {
+                id:3,
+                name:"supplier3",
+                email:"sup3@sup3.com",
+                isSignUp:true
             }
-        ]
+        ],
+        estimate:[],
+        order:[]
     }
 });
