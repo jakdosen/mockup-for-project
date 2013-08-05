@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Estimate Demo</title>
+    <link rel="stylesheet" type="text/css" href="style/jquery-ui/jquery-ui-1.10.3.custom.min.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="style/base.css"/>
+    <link rel="stylesheet" type="text/css" href="style/site.css"/>
+    <style>
+        #basic dl.pop-tab-dl dt {
+            color: #666666;
+            float: left;
+            font-weight: bold;
+            line-height: 20px;
+            min-height: 20px;
+            padding-right: 10px;
+            text-align: right;
+            width: 130px;
+        }
+        #basic dl.pop-tab-dl dd {
+            line-height: 20px;
+            margin-left: 140px;
+            min-height: 20px;
+        }
+        #specs dl.pop-tab-dl dt { text-align: left;}
+        #specs dl.pop-tab-dl dd { margin: 0;border: 1px solid gray;}
+        #specs dl.pop-tab-dl dd input { text-align: right;}
+        #specs dl.pop-tab-dl dd div { background: #ddd;border:1px solid #999}
+        #specs .quotes,
+        #specs .additional{
+            padding: 10px 0;
+            border-bottom: 1px solid #A6C9E2;
+        }
+        .quotes dt {width: 200px}
+        #specs .total{
+            padding: 10px 0;
+            border-top: 1px solid #A6C9E2;
+        }
+    </style>
+</head>
+<body>
+<script type="text/template" id="estimate-popup-tpl">
+    <div>
+        <h2>Basic information</h2>
+        <fieldset id="basic">
+            <div class="left">
+                <dl class="pop-tab-dl">   <dt>Quote Title:</dt> <dd><input type="text" value="<%=title%>"/> </dd>              </dl>
+                <dl class="pop-tab-dl">   <dt>Completion Date:</dt> <dd><input type="text" value="<%=completionDate%>"/></dd>              </dl>
+                <dl class="pop-tab-dl">   <dt>Description:</dt> <dd><textarea name="desc" rows="4" cols="20" ><%=description%></textarea></dd>  </dl>
+            </div>
+            <div>
+                <dl class="pop-tab-dl">   <dt>Comments:</dt> <dd><textarea name="comments" rows="8" cols="30" ><%=comments%></textarea></dd>     </dl>
+            </div>
+        </fieldset>
+        <fieldset  id="specs">
+            <h2>Specs</h2>
+            <div class="quotes">
+            </div>
+            <div class="additional">
+                <dl class="pop-tab-dl clear">
+                    <dt class="left" style="width:200px">Total Price:</dt>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                </dl>
+                <dl class="pop-tab-dl clear">
+                    <dt class="left" style="width:200px">Estimated Shipping:</dt>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                </dl>
+                <dl class="pop-tab-dl clear">
+                    <dt class="left" style="width:200px">Tax:</dt>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                </dl>
+            </div>
+            <div style="text-align:center;">...</div>
+            <div class="total">
+                <dl class="pop-tab-dl clear">
+                    <dt class="left" style="width:200px">Grand Total:</dt>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                    <dd class="left"><div><input type="text" value="200"/></div> </dd>
+                </dl>
+            </div>
+        </fieldset>
+    </div>
+    </script>
+
+    <script src="script/seajs/sea-debug.js"
+        data-config="app/config.js"
+        data-main="app/editor/estimate.js"></script>
+
+</body>
+</html>

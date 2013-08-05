@@ -25,5 +25,6 @@
         convert : function(sum,cur){ return accounting.formatMoney(sum, this.settings[cur.toLowerCase()]); },
         reconvert:function(sum,cur){ return accounting.unformat(sum, this.settings[cur.toLowerCase()].decimal); },
         convertBatch:function(arr,cur){return accounting.formatColumn(arr, this.settings[cur.toLowerCase()]);}
+       //AED symbol: د.إ
     };
 });
