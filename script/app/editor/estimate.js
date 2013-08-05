@@ -37,7 +37,8 @@
         create:function(){       },
         initialize:function(){
             this.model.bind("add",this.render,this);
-            this.render();
+//            this.render();
+//            this.calculate();
         },
         render:function(){
             this.$el.html(_.template(this.$el.html(),this.model.toJSON()));
@@ -55,15 +56,20 @@
             })
         },
         events:{
-            "change .quotes input":"calculate"
+            "change .quotes input":"calculate",
+            "change #shippingRate":"calculate",
+            "change #taxRate":     "calculate"
         },
         calculate:function(e){
             //validation
-            if(isNaN($(e.target).val())){
+            if(e && isNaN($(e.target).val())){
                 alert("Please input a number!");
+                $(e.target).focus().select();
                 return;
             }
-
+            this.totals = [];// initial calculation
+            this.shippings = [];
+            this.taxes = [];
             var dls = this.$("#specs .quotes").find("dl");
             var n,quotes=[];
             for (n = 0;n < 3; n++){
@@ -80,7 +86,9 @@
             var estimatedShipping = additional.eq(1);
             var tax = additional.eq(2);
             this.setTotalPrice(totalPrice,quotes);
-
+            this.setEstimatedShipping(estimatedShipping);
+            this.setTax(tax);
+            this.setGrandTotal();
         },
         sum: function (list,start) {
             var init = start || 0;
@@ -90,9 +98,49 @@
             var that = this;
             var dds = totalPrice.find("dd");
             _.each(dds, function (dd,i) {
-                    $(dd).find("input").val(that.sum(quotes[i]) );
+                    var total = that.sum(quotes[i]);
+                    that.totals.push(total);
+                    $(dd).find("input").val(total);
                 }
             )
+        },
+        setEstimatedShipping:function(estimatedShipping){
+            var rate = $("#shippingRate").val();
+            if(isNaN(rate)){
+                alert("Please input a number!");
+                return;
+            }
+            rate = rate/100;
+            var dds = estimatedShipping.find("dd");
+            var that = this;
+            _.each(dds, function (dd,i){
+                var shipping = that.totals[i]*rate;
+                that.shippings.push(shipping);
+                $(dd).find("input").val(shipping);
+            })
+        },
+        setTax: function(tax){
+            var rate = $("#taxRate").val();
+            if(isNaN(rate)){
+                alert("Please input a number!");
+                return;
+            }
+            rate = rate/100;
+            var dds = tax.find("dd");
+            var that = this;
+            _.each(dds, function (dd, i){
+                var tax = that.totals[i]*rate;
+                that.taxes.push(tax);
+                $(dd).find("input").val(tax);
+            });
+        },
+        setGrandTotal:function(){
+            var dds = this.$("#specs .total").find("dl dd");
+            var that = this;
+            _.each(dds, function(dd, i){     debugger;
+                var grandTotal = that.sum([that.totals[i],that.shippings[i],that.taxes[i]]);
+                $(dd).find("input").val(grandTotal);
+            })
         }
 
 
@@ -125,6 +173,7 @@
                 create:function(){
                     this.estimatePopupView = new EstimatePopupView({model: (new ItemModel()).set(estimate)}).setElement($(this));
                     this.estimatePopupView.render();
+                    this.estimatePopupView.calculate();
 
                 },
                 close: function () {
