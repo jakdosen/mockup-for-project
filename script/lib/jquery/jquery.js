@@ -6139,7 +6139,6 @@ jQuery.fn.extend({
 			var elem = this[0] || {},
 				i = 0,
 				l = this.length;
-
 			if ( value === undefined ) {
 				return elem.nodeType === 1 ?
 					elem.innerHTML.replace( rinlinejQuery, "" ) :
